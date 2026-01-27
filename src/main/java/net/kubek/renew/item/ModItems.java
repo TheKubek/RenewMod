@@ -66,12 +66,12 @@ public class ModItems {
             entries.addAfter(Items.MACE,DANCER_SWORD);
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entries->{
-            entries.addAfter(Items.NETHERITE_HOE,WOODEN_SCYTHE);
-            entries.addAfter(WOODEN_SCYTHE,STONE_SCYTHE);
-            entries.addAfter(STONE_SCYTHE,IRON_SCYTHE);
-            entries.addAfter(IRON_SCYTHE,GOLDEN_SCYTHE);
-            entries.addAfter(GOLDEN_SCYTHE,DIAMOND_SCYTHE);
-            entries.addAfter(DIAMOND_SCYTHE,NETHERITE_SCYTHE);
+            entries.addAfter(Items.WOODEN_HOE,WOODEN_SCYTHE);
+            entries.addAfter(Items.STONE_HOE,STONE_SCYTHE);
+            entries.addAfter(Items.IRON_HOE,IRON_SCYTHE);
+            entries.addAfter(Items.GOLDEN_HOE,GOLDEN_SCYTHE);
+            entries.addAfter(Items.DIAMOND_HOE,DIAMOND_SCYTHE);
+            entries.addAfter(Items.NETHERITE_HOE,NETHERITE_SCYTHE);
             entries.addAfter(NETHERITE_SCYTHE,ENCHANTER_SCYTHE);
             entries.addAfter(ENCHANTER_SCYTHE,GLACIER_SCYTHE);
         });
