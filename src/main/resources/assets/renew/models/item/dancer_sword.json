@@ -1,0 +1,28 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"parent": "minecraft:item/handheld",
+	"textures": {
+		"layer0": "renew:item/dancer_sword"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [0, -90, 55],
+			"translation": [0, -1.75, 0.5],
+			"scale": [2, 2, 2]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [0, 90, -55],
+			"translation": [0, -1.75, 0.5],
+			"scale": [2, 2, 2]
+		},
+		"firstperson_righthand": {
+			"rotation": [-60, -90, 0],
+			"translation": [1.13, 3.2, 1.13]
+		},
+		"firstperson_lefthand": {
+			"rotation": [-60, 90, 0],
+			"translation": [1.13, 3.2, 1.13]
+		}
+	}
+}

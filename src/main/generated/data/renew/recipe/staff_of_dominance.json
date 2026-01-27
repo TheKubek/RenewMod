@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "renew:orb_of_dominance"
+    },
+    "D": {
+      "item": "minecraft:dragon_egg"
+    },
+    "X": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "pattern": [
+    " # ",
+    "XDX",
+    " X "
+  ],
+  "result": {
+    "count": 1,
+    "id": "renew:staff_of_dominance"
+  }
+}

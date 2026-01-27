@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "X": {
+      "tag": "minecraft:stone_tool_materials"
+    }
+  },
+  "pattern": [
+    " X ",
+    " X ",
+    "XS "
+  ],
+  "result": {
+    "count": 1,
+    "id": "renew:stone_cutlass"
+  }
+}

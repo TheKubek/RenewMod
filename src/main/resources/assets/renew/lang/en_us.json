@@ -1,0 +1,53 @@
+{
+  "item.renew.staff_of_dominance": "Staff Of Dominance",
+  "item.renew.orb_of_dominance": "Orb Of Dominance",
+  "item.renew.dominance_dice": "Dominance Dice",
+
+
+  "item.renew.summeyy_plushie": "Summeyy Plushie",
+  "item.renew.teddy_bear_plushie": "Teddy Bear Plushie",
+  "item.renew.monkey_plushie": "Monkey Plushie",
+  "item.renew.koala_plushie": "Koala Plushie",
+  "item.renew.red_panda_plushie": "Red Panda Plushie",
+
+  "item.renew.wooden_cutlass": "Wooden Cutlass",
+  "item.renew.stone_cutlass": "Stone Cutlass",
+  "item.renew.iron_cutlass": "Iron Cutlass",
+  "item.renew.golden_cutlass": "Golden Cutlass",
+  "item.renew.diamond_cutlass": "Diamond Cutlass",
+  "item.renew.netherite_cutlass": "Netherite Cutlass",
+  "item.renew.dancer_sword": "Dancer Sword",
+
+  "item.renew.wooden_scythe": "Wooden Scythe",
+  "item.renew.stone_scythe": "Stone Scythe",
+  "item.renew.iron_scythe": "Iron Scythe",
+  "item.renew.golden_scythe": "Golden Scythe",
+  "item.renew.diamond_scythe": "Diamond Scythe",
+  "item.renew.netherite_scythe": "Netherite Scythe",
+  "item.renew.enchanter_scythe": "Enchanter Scythe",
+  "item.renew.glacier_scythe": "Glacier Scythe",
+
+  "item.renew.orb_of_dominance_part_one": "First Part Of Orb Of Dominance",
+  "item.renew.orb_of_dominance_part_two": "Second Part Of Orb Of Dominance",
+  "item.renew.orb_of_dominance_part_three": "Third Part Of Orb Of Dominance",
+  "item.renew.orb_of_dominance_part_four": "Fourth Part Of Orb Of Dominance",
+  "item.renew.orb_of_dominance_part_five": "Fifth Part Of Orb Of Dominance",
+  "item.renew.orb_of_dominance_part_six": "Sixth Part Of Orb Of Dominance",
+  "item.renew.orb_of_dominance_part_seven": "Seventh Part Of Orb Of Dominance",
+  "item.renew.orb_of_dominance_part_eight": "Eighth Part Of Orb Of Dominance",
+  "item.renew.orb_of_dominance_part_nine": "Ninth Part Of Orb Of Dominance",
+
+  "itemgroup.orb_of_dominance": "Orb Of Dominance",
+  "itemgroup.orb_of_dominance_parts": "Orb Of Dominance Parts",
+  "itemgroup.plushies": "Plushies",
+
+  "tooltip.renew.orb_of_dominance": "Very powerful orb, that no one knows what it does",
+  "tooltip.renew.staff_of_dominance": "Hold §e§lSHIFT §rfor more information",
+  "tooltip.renew.staff_of_dominance_shift_line_one": "With help of staff orb of dominance is stable and usable.",
+  "tooltip.renew.staff_of_dominance_shift_line_two": "Used on block can change them. And using it on living entity kills it.",
+  "tooltip.renew.staff_of_dominance_shift_line_three": "I won't suggest using it on Wither",
+  "tooltip.renew.orb_of_dominance_part": "A part of orb of dominance"
+
+
+
+}

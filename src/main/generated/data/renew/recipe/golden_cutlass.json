@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "X": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "pattern": [
+    " X ",
+    " X ",
+    "XS "
+  ],
+  "result": {
+    "count": 1,
+    "id": "renew:golden_cutlass"
+  }
+}
