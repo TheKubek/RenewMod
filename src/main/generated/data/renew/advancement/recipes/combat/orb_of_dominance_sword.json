@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_diamond": {
+    "has_orb_of_dominance_part_one": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:diamond"
+            "items": "renew:orb_of_dominance_part_one"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "renew:diamond_scythe"
+        "recipe": "renew:orb_of_dominance_sword"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_diamond"
+      "has_orb_of_dominance_part_one"
     ]
   ],
   "rewards": {
     "recipes": [
-      "renew:diamond_scythe"
+      "renew:orb_of_dominance_sword"
     ]
   }
 }

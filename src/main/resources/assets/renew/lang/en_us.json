@@ -37,6 +37,15 @@
   "item.renew.orb_of_dominance_part_eight": "Eighth Part Of Orb Of Dominance",
   "item.renew.orb_of_dominance_part_nine": "Ninth Part Of Orb Of Dominance",
 
+  "item.renew.orb_of_dominance_sword": "Orb Of Dominance Sword",
+  "item.renew.orb_of_dominance_pickaxe": "Orb Of Dominance Pickaxe",
+  "item.renew.orb_of_dominance_axe": "Orb Of Dominance Axe",
+  "item.renew.orb_of_dominance_shovel": "Orb Of Dominance Shovel",
+  "item.renew.orb_of_dominance_hoe": "Orb Of Dominance Hoe",
+  "item.renew.orb_of_dominance_cutlass": "Orb Of Dominance Cutlass",
+  "item.renew.orb_of_dominance_scythe": "Orb Of Dominance Scythe",
+
+
   "itemgroup.orb_of_dominance": "Orb Of Dominance",
   "itemgroup.orb_of_dominance_parts": "Orb Of Dominance Parts",
   "itemgroup.plushies": "Plushies",

@@ -1,5 +1,8 @@
-// 1.21	2026-01-06T18:26:35.2226714	Renew/Tags for minecraft:item
-8ce6afa2354d99b1f95e2818c86bbc7fbb664382 data\minecraft\tags\item\swords.json
-2ad1caf119572f4b9f677a25c897cdf01267d189 data\minecraft\tags\item\hoes.json
-250143bb65b11fe5afa96abc039b4ff56a3ebb32 data\renew\tags\item\scythes.json
-0b5e5c653c5d778b7b4b3d30a54963f32669a2e1 data\renew\tags\item\cutlasses.json
+// 1.21	2026-02-15T21:24:54.2091786	Renew/Tags for minecraft:item
+6571e0fbf4cc1cc836424d39f30d8d0674d4ce2c data\minecraft\tags\item\shovels.json
+829b6382d4cd65ff1c0065842efb183dde051b55 data\minecraft\tags\item\swords.json
+44596631aa2630ae50ae9e80047e4f49b2772ef5 data\minecraft\tags\item\hoes.json
+19ece73dbb0873b1fa59d4cdef2e410b31b6ef4d data\renew\tags\item\cutlasses.json
+2ea5cd5c9cbce04f10fccbfc176bf5b592b24855 data\renew\tags\item\scythes.json
+f72082c00272a02ff9c8f2b14ab5b359b0e90400 data\minecraft\tags\item\axes.json
+834d81019848536fc2459515b026e9e0bfe556f6 data\minecraft\tags\item\pickaxes.json
