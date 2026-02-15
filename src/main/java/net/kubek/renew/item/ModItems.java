@@ -2,15 +2,23 @@ package net.kubek.renew.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.kubek.renew.Renew;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
+import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
+import net.minecraft.util.TypedActionResult;
+import net.minecraft.world.World;
 
 import java.util.List;
+
+import static net.kubek.renew.item.OrbOfDominanceTools.*;
 
 public class ModItems {
 
@@ -49,9 +57,11 @@ public class ModItems {
     public static final Item ENCHANTER_SCYTHE = registerItem("enchanter_scythe",new EnchanterScytheItem(ToolMaterials.NETHERITE,new Item.Settings().attributeModifiers(HoeItem.createAttributeModifiers(ToolMaterials.NETHERITE,1f,-3f)).rarity(Rarity.RARE)));
     public static final Item GLACIER_SCYTHE = registerItem("glacier_scythe",new GlacierScytheItem(ToolMaterials.NETHERITE,new Item.Settings().attributeModifiers(HoeItem.createAttributeModifiers(ToolMaterials.NETHERITE,1f,-3f)).rarity(Rarity.EPIC)));
 
+    public static final Item COSMETIC_DICE = registerItem("cosmetic_dice",new CosmeticDice(new Item.Settings().maxCount(8).rarity(Rarity.UNCOMMON)));
 
 
-    private static Item registerItem(String name, Item item){
+
+    protected static Item registerItem(String name, Item item){
         return Registry.register(Registries.ITEM, Identifier.of(Renew.MOD_ID,name),item);
     }
 
@@ -72,9 +82,20 @@ public class ModItems {
             entries.addAfter(Items.GOLDEN_HOE,GOLDEN_SCYTHE);
             entries.addAfter(Items.DIAMOND_HOE,DIAMOND_SCYTHE);
             entries.addAfter(Items.NETHERITE_HOE,NETHERITE_SCYTHE);
-            entries.addAfter(NETHERITE_SCYTHE,ENCHANTER_SCYTHE);
+            entries.addAfter(OrbOfDominanceTools.ORB_OF_DOMINANCE_SCYTHE,ENCHANTER_SCYTHE);
             entries.addAfter(ENCHANTER_SCYTHE,GLACIER_SCYTHE);
         });
-
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entries -> {
+            entries.addAfter(ModItems.NETHERITE_SCYTHE,ORB_OF_DOMINANCE_AXE);
+            entries.addAfter(ORB_OF_DOMINANCE_AXE,ORB_OF_DOMINANCE_PICKAXE);
+            entries.addAfter(ORB_OF_DOMINANCE_PICKAXE,ORB_OF_DOMINANCE_SHOVEL);
+            entries.addAfter(ORB_OF_DOMINANCE_SHOVEL,ORB_OF_DOMINANCE_HOE);
+            entries.addAfter(ORB_OF_DOMINANCE_HOE,ORB_OF_DOMINANCE_SCYTHE);
+        });
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(e ->{
+            e.addAfter(Items.NETHERITE_SWORD,ORB_OF_DOMINANCE_SWORD);
+            e.addAfter(ModItems.NETHERITE_CUTLASS,ORB_OF_DOMINANCE_CUTLASS);
+        });
     }
+
 }

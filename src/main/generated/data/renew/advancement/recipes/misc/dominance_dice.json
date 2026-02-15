@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_diamond": {
+    "has_blaze_powder": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:diamond"
+            "items": "minecraft:blaze_powder"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "renew:diamond_scythe"
+        "recipe": "renew:dominance_dice"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_diamond"
+      "has_blaze_powder"
     ]
   ],
   "rewards": {
     "recipes": [
-      "renew:diamond_scythe"
+      "renew:dominance_dice"
     ]
   }
 }

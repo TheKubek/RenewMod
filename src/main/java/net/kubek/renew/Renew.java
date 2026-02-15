@@ -6,6 +6,7 @@ import net.kubek.renew.components.ModDataComponentTypes;
 import net.kubek.renew.item.ModItems;
 import net.kubek.renew.item.ModItemsGroup;
 import net.kubek.renew.item.OrbOfDominanceParts;
+import net.kubek.renew.item.OrbOfDominanceTools;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.util.Rarity;
 import org.slf4j.Logger;
@@ -25,11 +26,12 @@ public class Renew implements ModInitializer {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
-
         ModItems.registerModItems();
+        OrbOfDominanceTools.registerOrbOfDominanceTools();
         ModItemsGroup.registerItemGroups();
         OrbOfDominanceParts.registerOrbOfDominanceParts();
         ModDataComponentTypes.registerDataComponentTypes();
+
 
 
 	}

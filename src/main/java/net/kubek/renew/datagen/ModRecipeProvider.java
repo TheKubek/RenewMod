@@ -3,8 +3,11 @@ package net.kubek.renew.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.kubek.renew.item.ModItems;
+import net.kubek.renew.item.OrbOfDominanceParts;
+import net.kubek.renew.item.OrbOfDominanceTools;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
+import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
@@ -69,8 +72,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.BASALT),conditionsFromItem(Items.BASALT))
                 .offerTo(recipeExporter);
         registerCutlassCrafting(Items.IRON_INGOT,ModItems.IRON_CUTLASS,recipeExporter);
-        registerCutlassCrafting(Items.GOLD_INGOT,ModItems.GOLDEN_SCYTHE,recipeExporter);
-        registerCutlassCrafting(Items.DIAMOND,ModItems.DIAMOND_SCYTHE,recipeExporter);
+        registerCutlassCrafting(Items.GOLD_INGOT,ModItems.GOLDEN_CUTLASS,recipeExporter);
+        registerCutlassCrafting(Items.DIAMOND,ModItems.DIAMOND_CUTLASS,recipeExporter);
         offerNetheriteUpgradeRecipe(recipeExporter,ModItems.DIAMOND_CUTLASS,RecipeCategory.COMBAT,ModItems.NETHERITE_CUTLASS);
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.WOODEN_SCYTHE)
                 .pattern("XX ")
@@ -90,10 +93,101 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.COBBLED_DEEPSLATE),conditionsFromItem(Items.COBBLED_DEEPSLATE))
                 .criterion(hasItem(Items.BASALT),conditionsFromItem(Items.BASALT))
                 .offerTo(recipeExporter);
+    ShapedRecipeJsonBuilder.create(RecipeCategory.MISC,ModItems.COSMETIC_DICE)
+            .pattern("SWS")
+            .pattern("WLW")
+            .pattern("SWS")
+            .input('W',ItemTags.WOOL)
+            .input('S',Items.STRING)
+            .input('L',Items.LEATHER)
+            .criterion(hasItem(Items.LEATHER),conditionsFromItem(Items.LEATHER))
+            .offerTo(recipeExporter);
     registerScytheCrafting(Items.IRON_INGOT,ModItems.IRON_SCYTHE,recipeExporter);
     registerScytheCrafting(Items.GOLD_INGOT,ModItems.GOLDEN_SCYTHE,recipeExporter);
     registerScytheCrafting(Items.DIAMOND,ModItems.DIAMOND_SCYTHE,recipeExporter);
-    offerNetheriteUpgradeRecipe(recipeExporter,ModItems.DIAMOND_SCYTHE,RecipeCategory.COMBAT,ModItems.NETHERITE_SCYTHE);
+
+    ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT,OrbOfDominanceTools.ORB_OF_DOMINANCE_SWORD)
+            .pattern("N")
+            .pattern("N")
+            .pattern("O")
+            .input('N',Items.NETHERITE_INGOT)
+            .input('O', OrbOfDominanceParts.ORB_OF_DOMINANCE_PART_ONE)
+            .criterion(hasItem(OrbOfDominanceParts.ORB_OF_DOMINANCE_PART_ONE),conditionsFromItem(OrbOfDominanceParts.ORB_OF_DOMINANCE_PART_ONE))
+            .offerTo(recipeExporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT,OrbOfDominanceTools.ORB_OF_DOMINANCE_AXE)
+                .pattern("ON")
+                .pattern("SN")
+                .pattern("S ")
+                .input('N',Items.NETHERITE_INGOT)
+                .input('S',Items.STICK)
+                .input('O', OrbOfDominanceParts.ORB_OF_DOMINANCE_PART_TWO)
+                .criterion(hasItem(OrbOfDominanceParts.ORB_OF_DOMINANCE_PART_TWO),conditionsFromItem(OrbOfDominanceParts.ORB_OF_DOMINANCE_PART_TWO))
+                .offerTo(recipeExporter);
+    ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT,OrbOfDominanceTools.ORB_OF_DOMINANCE_PICKAXE)
+                .pattern("NON")
+                .pattern(" S ")
+                .pattern(" S ")
+                .input('N',Items.NETHERITE_INGOT)
+                .input('S',Items.STICK)
+                .input('O', OrbOfDominanceParts.ORB_OF_DOMINANCE_PART_THREE)
+                .criterion(hasItem(OrbOfDominanceParts.ORB_OF_DOMINANCE_PART_THREE),conditionsFromItem(OrbOfDominanceParts.ORB_OF_DOMINANCE_PART_THREE))
+                .offerTo(recipeExporter);
+ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT,OrbOfDominanceTools.ORB_OF_DOMINANCE_SHOVEL)
+                .pattern("O")
+                .pattern("N")
+                .pattern("S")
+                .input('N',Items.NETHERITE_INGOT)
+                .input('S',Items.STICK)
+                .input('O', OrbOfDominanceParts.ORB_OF_DOMINANCE_PART_FOUR)
+                .criterion(hasItem(OrbOfDominanceParts.ORB_OF_DOMINANCE_PART_FOUR),conditionsFromItem(OrbOfDominanceParts.ORB_OF_DOMINANCE_PART_FOUR))
+                .offerTo(recipeExporter);
+ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT,OrbOfDominanceTools.ORB_OF_DOMINANCE_HOE)
+                .pattern("ON")
+                .pattern("N ")
+                .pattern("S ")
+                .input('N',Items.NETHERITE_INGOT)
+                .input('S',Items.STICK)
+                .input('O', OrbOfDominanceParts.ORB_OF_DOMINANCE_PART_FIVE)
+                .criterion(hasItem(OrbOfDominanceParts.ORB_OF_DOMINANCE_PART_FIVE),conditionsFromItem(OrbOfDominanceParts.ORB_OF_DOMINANCE_PART_FIVE))
+                .offerTo(recipeExporter);
+ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT,OrbOfDominanceTools.ORB_OF_DOMINANCE_CUTLASS)
+                .pattern("N ")
+                .pattern("N ")
+                .pattern("SO")
+                .input('N',Items.NETHERITE_INGOT)
+                .input('S',Items.STICK)
+                .input('O', ModItems.ORB_OF_DOMINANCE)
+                .criterion(hasItem(ModItems.ORB_OF_DOMINANCE),conditionsFromItem(ModItems.ORB_OF_DOMINANCE))
+                .offerTo(recipeExporter);
+ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT,OrbOfDominanceTools.ORB_OF_DOMINANCE_SCYTHE)
+                .pattern("NN ")
+                .pattern(" ON")
+                .pattern(" S ")
+                .input('N',Items.NETHERITE_INGOT)
+                .input('S',Items.STICK)
+                .input('O', ModItems.ORB_OF_DOMINANCE)
+                .criterion(hasItem(ModItems.ORB_OF_DOMINANCE),conditionsFromItem(ModItems.ORB_OF_DOMINANCE))
+                .offerTo(recipeExporter);
+ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.DOMINANCE_DICE)
+                .pattern("CBC")
+                .pattern("BNB")
+                .pattern("CBC")
+                .input('C',Items.COAL_BLOCK)
+                .input('B',Items.BLAZE_POWDER)
+                .input('N',Items.NETHER_STAR)
+                .criterion(hasItem(Items.BLAZE_POWDER),conditionsFromItem(Items.BLAZE_POWDER))
+                .offerTo(recipeExporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC,ModItems.ORB_OF_DOMINANCE)
+                .input(OrbOfDominanceParts.ORB_OF_DOMINANCE_PART_ONE)
+                .input(OrbOfDominanceParts.ORB_OF_DOMINANCE_PART_TWO)
+                .input(OrbOfDominanceParts.ORB_OF_DOMINANCE_PART_THREE)
+                .input(OrbOfDominanceParts.ORB_OF_DOMINANCE_PART_FOUR)
+                .input(OrbOfDominanceParts.ORB_OF_DOMINANCE_PART_FIVE)
+                .input(OrbOfDominanceParts.ORB_OF_DOMINANCE_PART_SIX)
+                .input(OrbOfDominanceParts.ORB_OF_DOMINANCE_PART_SEVEN)
+                .input(OrbOfDominanceParts.ORB_OF_DOMINANCE_PART_EIGHT)
+                .input(OrbOfDominanceParts.ORB_OF_DOMINANCE_PART_NINE)
+                .criterion(hasItem(OrbOfDominanceParts.ORB_OF_DOMINANCE_PART_ONE),conditionsFromItem(OrbOfDominanceParts.ORB_OF_DOMINANCE_PART_ONE));
     }
     private static void registerScytheCrafting(Item input, Item output,RecipeExporter recipeExporter) {
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, output)
