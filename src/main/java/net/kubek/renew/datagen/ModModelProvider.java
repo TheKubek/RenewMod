@@ -6,6 +6,7 @@ import net.kubek.renew.item.ModItems;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
+import net.minecraft.item.ArmorItem;
 
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
@@ -33,6 +34,10 @@ public class ModModelProvider extends FabricModelProvider {
     itemModelGenerator.register(ModItems.NETHERITE_SCYTHE, Models.HANDHELD);
     itemModelGenerator.register(ModItems.ENCHANTER_SCYTHE, Models.HANDHELD);
     itemModelGenerator.register(ModItems.GLACIER_SCYTHE, Models.HANDHELD);
+    itemModelGenerator.registerArmor(((ArmorItem) ModItems.ORB_OF_DOMINANCE_HELMET));
+    itemModelGenerator.registerArmor(((ArmorItem) ModItems.ORB_OF_DOMINANCE_CHESTPLATE));
+    itemModelGenerator.registerArmor(((ArmorItem) ModItems.ORB_OF_DOMINANCE_LEGGINGS));
+    itemModelGenerator.registerArmor(((ArmorItem) ModItems.ORB_OF_DOMINANCE_BOOTS));
 
     }
 }

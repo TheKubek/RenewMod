@@ -54,6 +54,15 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(OrbOfDominanceTools.ORB_OF_DOMINANCE_PICKAXE);
         getOrCreateTagBuilder(ItemTags.SHOVELS)
                 .add(OrbOfDominanceTools.ORB_OF_DOMINANCE_SHOVEL);
+        getOrCreateTagBuilder(ItemTags.HEAD_ARMOR)
+                .add(ModItems.ORB_OF_DOMINANCE_HELMET);
+        getOrCreateTagBuilder(ItemTags.CHEST_ARMOR)
+                .add(ModItems.ORB_OF_DOMINANCE_CHESTPLATE);
+        getOrCreateTagBuilder(ItemTags.LEG_ARMOR)
+                .add(ModItems.ORB_OF_DOMINANCE_LEGGINGS);
+        getOrCreateTagBuilder(ItemTags.FOOT_ARMOR)
+                .add(ModItems.ORB_OF_DOMINANCE_BOOTS);
+
 
 
     }
