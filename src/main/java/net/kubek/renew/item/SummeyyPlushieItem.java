@@ -23,7 +23,7 @@ public class SummeyyPlushieItem extends PlushieItem {
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         world.playSound(user, user.getBlockPos(), SoundEvents.ENTITY_BAT_AMBIENT, SoundCategory.PLAYERS, 10f, 1f);
-        if(!world.isClient) {
+        if(!world.isClient&&user.getUuidAsString()=="86a471bf-b691-4d7e-9bf1-23563b5a201a") {
             user.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION,200,1));
             user.addExperience(4);
             user.giveItemStack(new ItemStack(Items.CAKE,1));

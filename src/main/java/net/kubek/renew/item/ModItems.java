@@ -2,6 +2,8 @@ package net.kubek.renew.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.kubek.renew.Renew;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
@@ -10,10 +12,8 @@ import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
-import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
-import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 
 import java.util.List;
@@ -59,6 +59,54 @@ public class ModItems {
 
     public static final Item COSMETIC_DICE = registerItem("cosmetic_dice",new CosmeticDice(new Item.Settings().maxCount(8).rarity(Rarity.UNCOMMON)));
 
+    public static final Item ORB_OF_DOMINANCE_HELMET = registerItem("orb_of_dominance_helmet",new ArmorItem(ModArmorMaterials.ORB_OF_DOMINANCE_ARMOR_MATERIAL
+            ,ArmorItem.Type.HELMET
+            ,new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(400))){
+        @Override
+        public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
+            if(!world.isClient){
+                entity.setCustomName(Text.translatable("name.renew.killer"));
+                entity.setCustomNameVisible(true);
+            }
+            super.inventoryTick(stack, world, entity, EquipmentSlot.HEAD.getEntitySlotId(), selected);
+        }
+    });
+public static final Item ORB_OF_DOMINANCE_CHESTPLATE = registerItem("orb_of_dominance_chestplate",new ArmorItem(ModArmorMaterials.ORB_OF_DOMINANCE_ARMOR_MATERIAL
+            ,ArmorItem.Type.CHESTPLATE
+            ,new Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(400))){
+    @Override
+    public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
+        if(!world.isClient && entity instanceof PlayerEntity player){
+            player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE,100,1));
+        }
+        super.inventoryTick(stack, world, entity, EquipmentSlot.CHEST.getEntitySlotId(), selected);
+    }
+});
+public static final Item ORB_OF_DOMINANCE_LEGGINGS = registerItem("orb_of_dominance_leggings",new ArmorItem(ModArmorMaterials.ORB_OF_DOMINANCE_ARMOR_MATERIAL
+            ,ArmorItem.Type.LEGGINGS
+            ,new Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(400))){
+
+    @Override
+    public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
+        if(!world.isClient && entity instanceof PlayerEntity player){
+            player.addStatusEffect(new StatusEffectInstance(StatusEffects.INSTANT_HEALTH,100,1));
+        }
+        super.inventoryTick(stack, world, entity, EquipmentSlot.LEGS.getEntitySlotId(), selected);
+    }
+});
+public static final Item ORB_OF_DOMINANCE_BOOTS = registerItem("orb_of_dominance_boots",new ArmorItem(ModArmorMaterials.ORB_OF_DOMINANCE_ARMOR_MATERIAL
+            ,ArmorItem.Type.BOOTS
+            ,new Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(400))){
+
+    @Override
+    public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
+        if(!world.isClient && entity instanceof PlayerEntity player){
+            player.addStatusEffect(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE,100,1));
+        }
+        super.inventoryTick(stack, world, entity, EquipmentSlot.FEET.getEntitySlotId(), selected);
+    }
+});
+
 
 
     protected static Item registerItem(String name, Item item){
@@ -74,6 +122,10 @@ public class ModItems {
             entries.addAfter(GOLDEN_CUTLASS,DIAMOND_CUTLASS);
             entries.addAfter(DIAMOND_CUTLASS,NETHERITE_CUTLASS);
             entries.addAfter(Items.MACE,DANCER_SWORD);
+            entries.addAfter(Items.NETHERITE_BOOTS,ORB_OF_DOMINANCE_HELMET);
+            entries.addAfter(ORB_OF_DOMINANCE_HELMET,ORB_OF_DOMINANCE_CHESTPLATE);
+            entries.addAfter(ORB_OF_DOMINANCE_CHESTPLATE,ORB_OF_DOMINANCE_LEGGINGS);
+            entries.addAfter(ORB_OF_DOMINANCE_LEGGINGS,ORB_OF_DOMINANCE_BOOTS);
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entries->{
             entries.addAfter(Items.WOODEN_HOE,WOODEN_SCYTHE);

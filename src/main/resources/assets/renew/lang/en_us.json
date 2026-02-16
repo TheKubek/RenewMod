@@ -9,6 +9,7 @@
   "item.renew.monkey_plushie": "Monkey Plushie",
   "item.renew.koala_plushie": "Koala Plushie",
   "item.renew.red_panda_plushie": "Red Panda Plushie",
+  "item.renew.cosmetic_dice": "Cosmetic Dice",
 
   "item.renew.wooden_cutlass": "Wooden Cutlass",
   "item.renew.stone_cutlass": "Stone Cutlass",
@@ -45,6 +46,12 @@
   "item.renew.orb_of_dominance_cutlass": "Orb Of Dominance Cutlass",
   "item.renew.orb_of_dominance_scythe": "Orb Of Dominance Scythe",
 
+  "item.renew.orb_of_dominance_helmet": "Orb Of Dominance Helmet",
+  "item.renew.orb_of_dominance_chestplate": "Orb Of Dominance Chestplate",
+  "item.renew.orb_of_dominance_leggings": "Orb Of Dominance Leggings",
+  "item.renew.orb_of_dominance_boots": "Orb Of Dominance Boots",
+
+
 
   "itemgroup.orb_of_dominance": "Orb Of Dominance",
   "itemgroup.orb_of_dominance_parts": "Orb Of Dominance Parts",
@@ -55,7 +62,9 @@
   "tooltip.renew.staff_of_dominance_shift_line_one": "With help of staff orb of dominance is stable and usable.",
   "tooltip.renew.staff_of_dominance_shift_line_two": "Used on block can change them. And using it on living entity kills it.",
   "tooltip.renew.staff_of_dominance_shift_line_three": "I won't suggest using it on Wither",
-  "tooltip.renew.orb_of_dominance_part": "A part of orb of dominance"
+  "tooltip.renew.orb_of_dominance_part": "A part of orb of dominance",
+
+  "name.renew.killer": "UNDESTRUCTABLE"
 
 
 
