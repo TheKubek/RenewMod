@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_orb_of_dominance": {
+    "has_orb_of_dominance_part_one": {
       "conditions": {
         "items": [
           {
-            "items": "renew:orb_of_dominance"
+            "items": "renew:orb_of_dominance_part_one"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_orb_of_dominance"
+      "has_orb_of_dominance_part_one"
     ]
   ],
   "rewards": {

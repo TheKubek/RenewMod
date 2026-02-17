@@ -20,7 +20,10 @@
 		],
 		"fabric-datagen": [
 			"net.kubek.renew.RenewDataGenerator"
-		]
+		],
+      "client": [
+        "net.kubek.renew.RenewClient"
+      ]
 	},
 	"mixins": [
 		"renew.mixins.json"

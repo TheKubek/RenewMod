@@ -30,14 +30,7 @@ public class ModItems {
     public static final Item MONKEY_PLUSHIE = registerItem("monkey_plushie",new PlushieItem(new Item.Settings().maxCount(1)));
     public static final Item KOALA_PLUSHIE = registerItem("koala_plushie",new PlushieItem(new Item.Settings().maxCount(1).rarity(Rarity.UNCOMMON)));
 
-    public static final Item RED_PANDA_PLUSHIE = registerItem("red_panda_plushie",new PlushieItem(new Item.Settings().maxCount(1).rarity(Rarity.UNCOMMON)){
-        @Override
-        public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-            tooltip.add(Text.literal(""));
-            tooltip.add(Text.literal("§6--unfinished item--"));
-            super.appendTooltip(stack, context, tooltip, type);
-        }
-    });
+    public static final Item RED_PANDA_PLUSHIE = registerItem("red_panda_plushie",new PlushieItem(new Item.Settings().maxCount(1).rarity(Rarity.UNCOMMON)));
     public static final Item SUMMEYY_PLUSHIE = registerItem("summeyy_plushie",new SummeyyPlushieItem(new Item.Settings().maxCount(1).rarity(Rarity.EPIC)));
 
     public static final Item WOODEN_CUTLASS = registerItem("wooden_cutlass",new SwordItem(ToolMaterials.WOOD,new Item.Settings().attributeModifiers(SwordItem.createAttributeModifiers(ToolMaterials.WOOD,1,-1.8f))));
@@ -45,7 +38,7 @@ public class ModItems {
     public static final Item IRON_CUTLASS = registerItem("iron_cutlass",new SwordItem(ToolMaterials.IRON,new Item.Settings().attributeModifiers(SwordItem.createAttributeModifiers(ToolMaterials.IRON,1,-1.6f))));
     public static final Item GOLDEN_CUTLASS = registerItem("golden_cutlass",new SwordItem(ToolMaterials.GOLD,new Item.Settings().attributeModifiers(SwordItem.createAttributeModifiers(ToolMaterials.GOLD,1,-1f))));
     public static final Item DIAMOND_CUTLASS = registerItem("diamond_cutlass",new SwordItem(ToolMaterials.DIAMOND,new Item.Settings().attributeModifiers(SwordItem.createAttributeModifiers(ToolMaterials.DIAMOND,1,-1.4f))));
-    public static final Item NETHERITE_CUTLASS = registerItem("netherite_cutlass",new SwordItem(ToolMaterials.NETHERITE,new Item.Settings().attributeModifiers(SwordItem.createAttributeModifiers(ToolMaterials.NETHERITE,1,-1.3f))));
+    public static final Item NETHERITE_CUTLASS = registerItem("netherite_cutlass",new SwordItem(ToolMaterials.NETHERITE,new Item.Settings().attributeModifiers(SwordItem.createAttributeModifiers(ToolMaterials.NETHERITE,1,-1.3f)).fireproof()));
     public static final Item DANCER_SWORD = registerItem("dancer_sword",new DancerSwordItem(ToolMaterials.DIAMOND,new Item.Settings().attributeModifiers(SwordItem.createAttributeModifiers(ToolMaterials.NETHERITE,2,-1.4f)).rarity(Rarity.RARE)));
 
     public static final Item WOODEN_SCYTHE = registerItem("wooden_scythe",new ScytheItem(ToolMaterials.WOOD,new Item.Settings().attributeModifiers(ScytheItem.createAttributeModifiers(ToolMaterials.WOOD,1f,-3f))));
@@ -53,57 +46,56 @@ public class ModItems {
     public static final Item IRON_SCYTHE = registerItem("iron_scythe",new ScytheItem(ToolMaterials.IRON,new Item.Settings().attributeModifiers(ScytheItem.createAttributeModifiers(ToolMaterials.IRON,1f,-3f))));
     public static final Item GOLDEN_SCYTHE = registerItem("golden_scythe",new ScytheItem(ToolMaterials.GOLD,new Item.Settings().attributeModifiers(ScytheItem.createAttributeModifiers(ToolMaterials.GOLD,1f,-3f))));
     public static final Item DIAMOND_SCYTHE = registerItem("diamond_scythe",new ScytheItem(ToolMaterials.DIAMOND,new Item.Settings().attributeModifiers(ScytheItem.createAttributeModifiers(ToolMaterials.DIAMOND,1f,-3f))));
-    public static final Item NETHERITE_SCYTHE = registerItem("netherite_scythe",new ScytheItem(ToolMaterials.NETHERITE,new Item.Settings().attributeModifiers(ScytheItem.createAttributeModifiers(ToolMaterials.NETHERITE,1f,-3f))));
-    public static final Item ENCHANTER_SCYTHE = registerItem("enchanter_scythe",new EnchanterScytheItem(ToolMaterials.NETHERITE,new Item.Settings().attributeModifiers(HoeItem.createAttributeModifiers(ToolMaterials.NETHERITE,1f,-3f)).rarity(Rarity.RARE)));
-    public static final Item GLACIER_SCYTHE = registerItem("glacier_scythe",new GlacierScytheItem(ToolMaterials.NETHERITE,new Item.Settings().attributeModifiers(HoeItem.createAttributeModifiers(ToolMaterials.NETHERITE,1f,-3f)).rarity(Rarity.EPIC)));
+    public static final Item NETHERITE_SCYTHE = registerItem("netherite_scythe",new ScytheItem(ToolMaterials.NETHERITE,new Item.Settings().attributeModifiers(ScytheItem.createAttributeModifiers(ToolMaterials.NETHERITE,1f,-3f)).fireproof()));
+    public static final Item ENCHANTER_SCYTHE = registerItem("enchanter_scythe",new EnchanterScytheItem(ToolMaterials.NETHERITE,new Item.Settings().attributeModifiers(HoeItem.createAttributeModifiers(ToolMaterials.NETHERITE,1f,-3f)).fireproof().rarity(Rarity.RARE)));
+    public static final Item GLACIER_SCYTHE = registerItem("glacier_scythe",new GlacierScytheItem(ToolMaterials.NETHERITE,new Item.Settings().attributeModifiers(HoeItem.createAttributeModifiers(ToolMaterials.NETHERITE,1f,-3f)).fireproof().rarity(Rarity.EPIC)));
 
     public static final Item COSMETIC_DICE = registerItem("cosmetic_dice",new CosmeticDice(new Item.Settings().maxCount(8).rarity(Rarity.UNCOMMON)));
 
     public static final Item ORB_OF_DOMINANCE_HELMET = registerItem("orb_of_dominance_helmet",new ArmorItem(ModArmorMaterials.ORB_OF_DOMINANCE_ARMOR_MATERIAL
             ,ArmorItem.Type.HELMET
-            ,new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(400))){
+            ,new Item.Settings().fireproof().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(400))){
         @Override
         public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
-            if(!world.isClient){
-                entity.setCustomName(Text.translatable("name.renew.killer"));
-                entity.setCustomNameVisible(true);
+            if(!world.isClient && entity instanceof PlayerEntity player&&player.getEquippedStack(EquipmentSlot.HEAD).getItem()==ORB_OF_DOMINANCE_HELMET){
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH,100,0));
             }
-            super.inventoryTick(stack, world, entity, EquipmentSlot.HEAD.getEntitySlotId(), selected);
+            super.inventoryTick(stack, world, entity, slot, selected);
         }
     });
 public static final Item ORB_OF_DOMINANCE_CHESTPLATE = registerItem("orb_of_dominance_chestplate",new ArmorItem(ModArmorMaterials.ORB_OF_DOMINANCE_ARMOR_MATERIAL
             ,ArmorItem.Type.CHESTPLATE
-            ,new Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(400))){
+            ,new Item.Settings().fireproof().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(400))){
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
-        if(!world.isClient && entity instanceof PlayerEntity player){
-            player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE,100,1));
+        if(!world.isClient && entity instanceof PlayerEntity player&&player.getEquippedStack(EquipmentSlot.CHEST).getItem()==ORB_OF_DOMINANCE_CHESTPLATE){
+            player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE,100,0));
         }
-        super.inventoryTick(stack, world, entity, EquipmentSlot.CHEST.getEntitySlotId(), selected);
+        super.inventoryTick(stack, world, entity, EquipmentSlot.CHEST.getEntitySlotId(), true);
     }
 });
 public static final Item ORB_OF_DOMINANCE_LEGGINGS = registerItem("orb_of_dominance_leggings",new ArmorItem(ModArmorMaterials.ORB_OF_DOMINANCE_ARMOR_MATERIAL
             ,ArmorItem.Type.LEGGINGS
-            ,new Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(400))){
+            ,new Item.Settings().fireproof().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(400))){
 
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
-        if(!world.isClient && entity instanceof PlayerEntity player){
-            player.addStatusEffect(new StatusEffectInstance(StatusEffects.INSTANT_HEALTH,100,1));
+        if(!world.isClient && entity instanceof PlayerEntity player&&player.getEquippedStack(EquipmentSlot.LEGS).getItem()==ORB_OF_DOMINANCE_LEGGINGS){
+            player.addStatusEffect(new StatusEffectInstance(StatusEffects.HEALTH_BOOST,100,0));
         }
-        super.inventoryTick(stack, world, entity, EquipmentSlot.LEGS.getEntitySlotId(), selected);
+        super.inventoryTick(stack, world, entity, EquipmentSlot.LEGS.getEntitySlotId(), true);
     }
 });
 public static final Item ORB_OF_DOMINANCE_BOOTS = registerItem("orb_of_dominance_boots",new ArmorItem(ModArmorMaterials.ORB_OF_DOMINANCE_ARMOR_MATERIAL
             ,ArmorItem.Type.BOOTS
-            ,new Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(400))){
+            ,new Item.Settings().fireproof().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(400))){
 
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
-        if(!world.isClient && entity instanceof PlayerEntity player){
-            player.addStatusEffect(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE,100,1));
+        if(!world.isClient && entity instanceof PlayerEntity player&&player.getEquippedStack(EquipmentSlot.FEET).getItem()==ORB_OF_DOMINANCE_BOOTS){
+            player.addStatusEffect(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE,100,0));
         }
-        super.inventoryTick(stack, world, entity, EquipmentSlot.FEET.getEntitySlotId(), selected);
+        super.inventoryTick(stack, world, entity, EquipmentSlot.FEET.getEntitySlotId(), true);
     }
 });
 

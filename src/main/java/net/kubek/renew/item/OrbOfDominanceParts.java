@@ -15,7 +15,6 @@ import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
-import net.minecraft.util.UseAction;
 import net.minecraft.world.World;
 
 import java.util.List;

@@ -63,8 +63,11 @@
   "tooltip.renew.staff_of_dominance_shift_line_two": "Used on block can change them. And using it on living entity kills it.",
   "tooltip.renew.staff_of_dominance_shift_line_three": "I won't suggest using it on Wither",
   "tooltip.renew.orb_of_dominance_part": "A part of orb of dominance",
+  "tooltip.renew.orb_of_dominance_sword_line_one": "Child's blood strengthens this sword",
 
-  "name.renew.killer": "UNDESTRUCTABLE"
+  "name.renew.killer": "UNDESTRUCTABLE",
+
+  "entity.renew.enchanter": "Enchanter"
 
 
 

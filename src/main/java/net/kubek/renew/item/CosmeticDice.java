@@ -21,19 +21,17 @@ public class CosmeticDice extends Item {
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         if(!world.isClient) {
             ItemEntity item = null;
-            int chance = (int) (random.nextInt(5) + 1);
+            int chance = (int) (random.nextInt(100) + 1);
             user.getStackInHand(hand).decrement(1);
-            if (chance == 1)
+            if (chance <= 24)
                 item = new ItemEntity(world, user.getX(), user.getY() + 1, user.getZ(), new ItemStack(ModItems.TEDDY_BEAR_PLUSHIE));
-            else if (chance == 2)
+            else if (chance <= 48)
                 item = new ItemEntity(world, user.getX(), user.getY() + 1, user.getZ(), new ItemStack(ModItems.MONKEY_PLUSHIE));
-            else if (chance == 3)
+            else if (chance <= 72)
                 item = new ItemEntity(world, user.getX(), user.getY() + 1, user.getZ(), new ItemStack(ModItems.KOALA_PLUSHIE));
-            else if (chance == 4)
+            else if (chance <= 96)
                 item = new ItemEntity(world, user.getX(), user.getY() + 1, user.getZ(), new ItemStack(ModItems.RED_PANDA_PLUSHIE));
-            else if (chance == 5)
-                item = new ItemEntity(world, user.getX(), user.getY() + 1, user.getZ(), new ItemStack(ModItems.SUMMEYY_PLUSHIE));
-            else if (chance == 6)
+            else
                 item = new ItemEntity(world, user.getX(), user.getY() + 1, user.getZ(), new ItemStack(ModItems.SUMMEYY_PLUSHIE));
             item.setPickupDelay(0);
             world.spawnEntity(item);
