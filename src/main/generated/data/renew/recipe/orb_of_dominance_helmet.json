@@ -6,19 +6,15 @@
       "item": "minecraft:netherite_ingot"
     },
     "O": {
-      "item": "renew:orb_of_dominance_part_one"
-    },
-    "S": {
-      "item": "minecraft:stick"
+      "item": "renew:orb_of_dominance_part_six"
     }
   },
   "pattern": [
-    "N ",
-    "N ",
-    "SO"
+    "NON",
+    "N N"
   ],
   "result": {
     "count": 1,
-    "id": "renew:orb_of_dominance_cutlass"
+    "id": "renew:orb_of_dominance_helmet"
   }
 }

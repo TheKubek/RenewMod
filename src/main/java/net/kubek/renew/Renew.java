@@ -2,7 +2,10 @@ package net.kubek.renew;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.kubek.renew.components.ModDataComponentTypes;
+import net.kubek.renew.entity.ModEntities;
+import net.kubek.renew.entity.custom.EnchanterEntity;
 import net.kubek.renew.item.ModItems;
 import net.kubek.renew.item.ModItemsGroup;
 import net.kubek.renew.item.OrbOfDominanceParts;
@@ -31,8 +34,8 @@ public class Renew implements ModInitializer {
         ModItemsGroup.registerItemGroups();
         OrbOfDominanceParts.registerOrbOfDominanceParts();
         ModDataComponentTypes.registerDataComponentTypes();
+        ModEntities.registerModEntities();
 
-
-
+        FabricDefaultAttributeRegistry.register(ModEntities.ENCHANTER, EnchanterEntity.createEnchanterAttributes());
 	}
 }
