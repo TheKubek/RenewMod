@@ -5,6 +5,8 @@ import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.util.Identifier;
 
 public class ModEntityModelLayers {
-    public static final EntityModelLayer ENCHANTER =
+    public static EntityModelLayer ENCHANTER =
             new EntityModelLayer(Identifier.of(Renew.MOD_ID,"enchanter"),"main");
+    public static EntityModelLayer CORRUPTED_ENCHANTER =
+            new EntityModelLayer(Identifier.of(Renew.MOD_ID,"corrupted_enchanter"),"main");
 }

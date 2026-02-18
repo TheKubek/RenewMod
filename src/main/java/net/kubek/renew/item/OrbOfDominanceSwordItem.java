@@ -12,10 +12,6 @@ import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.text.Text;
-import net.minecraft.util.Hand;
-import net.minecraft.util.Language;
-import net.minecraft.util.TypedActionResult;
-import net.minecraft.world.World;
 
 import java.util.List;
 
@@ -59,7 +55,7 @@ public class OrbOfDominanceSwordItem extends SwordItem {
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
         tooltip.add(Text.translatable("tooltip.renew.orb_of_dominance_sword_line_one"));
         if(stack.get(ModDataComponentTypes.AdditionalDamage)!=null) {
-            tooltip.add(Text.literal("Damage: " + stack.get(ModDataComponentTypes.AdditionalDamage).toString()));
+            tooltip.add(Text.literal("Damage: " + (stack.get(ModDataComponentTypes.AdditionalDamage).floatValue()-(stack.get(ModDataComponentTypes.AdditionalDamage).floatValue()%0.2f))));
         }
         super.appendTooltip(stack, context, tooltip, type);
     }

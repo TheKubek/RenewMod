@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 205837,
+    "separation": 100,
+    "spacing": 107
+  },
+  "structures": [
+    {
+      "structure": "renew:enchanter_library",
+      "weight": 1
+    }
+  ]
+}
