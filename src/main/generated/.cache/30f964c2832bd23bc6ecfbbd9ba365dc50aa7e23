@@ -1,4 +1,4 @@
-// 1.21	2026-02-17T18:09:49.7710399	Renew/Recipes
+// 1.21	2026-02-18T23:30:46.6718301	Renew/Recipes
 b3a9165cd2b1a0633dfdfd53482231ded203fbcc data\renew\advancement\recipes\combat\orb_of_dominance_scythe.json
 186c3cb85e899cae0a3c79fc80f888544cd3799f data\renew\recipe\stone_cutlass.json
 57e918c9fcb5c7d8440663cf59f25290b7513e0b data\renew\advancement\recipes\combat\orb_of_dominance_leggings.json
@@ -16,11 +16,12 @@ fe7512783b20422eaf7a3190b7fdcb6974fa9eef data\renew\advancement\recipes\combat\g
 3c4a28e1a7ca862d219527cbba208163cb4d8a1f data\renew\recipe\wooden_cutlass.json
 e76309ce90e37d72d2bf843a42d67af6c3c43d6f data\renew\recipe\orb_of_dominance_helmet.json
 23a8ac0239f6a579e071b0f6c1c16de08097d4cc data\renew\recipe\cosmetic_dice.json
+0cd14882d76cd434d7558f23c7f098ea8deb2216 data\renew\advancement\recipes\misc\glacier_scythe.json
 6df8c3e303ff2334083828aebbd7d507df06bc39 data\renew\recipe\iron_scythe.json
 021252c7d793ecbcfae5041c1ac6b3e9cc48d7af data\renew\advancement\recipes\combat\iron_cutlass.json
 d2221d815ffa36daa2b914a9dfe66b98d4db58ac data\renew\recipe\orb_of_dominance_pickaxe.json
-d3f31a0f3cecf478eda31e2220cc9a91f864a192 data\renew\advancement\recipes\tools\orb_of_dominance_shovel.json
 1a6b7350a2e6fa6ee442057c2d64aa33dd330141 data\renew\advancement\recipes\misc\staff_of_dominance.json
+d3f31a0f3cecf478eda31e2220cc9a91f864a192 data\renew\advancement\recipes\tools\orb_of_dominance_shovel.json
 c89367153bcd8f828e8e6a37b8681d5056509a97 data\renew\recipe\orb_of_dominance_cutlass.json
 aa402b955c112d3b2e56d4f2cf278c3194bf3bc8 data\renew\recipe\wooden_scythe.json
 968421e5416c16c3de1a02f19629e1cf3f554a27 data\renew\advancement\recipes\combat\diamond_scythe.json
@@ -31,10 +32,11 @@ c7831567069435e38bfbe80baa5829dc1fdd8b52 data\renew\recipe\golden_cutlass.json
 76b5f0910ef483cbc40a1dee56489762001ef6de data\renew\advancement\recipes\combat\dancer_sword.json
 ad19e8e9379a49294cab19f8f0875ab4a0fb5d25 data\renew\recipe\orb_of_dominance_sword.json
 a8f5919ae64fef00c96628e9c0507e0ad5812597 data\renew\recipe\iron_cutlass.json
+6c791370de729b3bda225cb44f1b3d786af2a0e0 data\renew\recipe\glacier_scythe.json
 02281b3268b8abf89ea26b88c3fe03d10b1b7f66 data\renew\recipe\orb_of_dominance_hoe.json
 202fef935484658a4a50a23412376b7b37b6baa2 data\renew\recipe\netherite_cutlass_smithing.json
-0589cf3dee69e04d9350284fd549dacf95dfcf7c data\renew\recipe\golden_scythe.json
 a21b75e272048588158828e8a7331583b0834ecf data\renew\recipe\dancer_sword.json
+0589cf3dee69e04d9350284fd549dacf95dfcf7c data\renew\recipe\golden_scythe.json
 3ec288f0d55c66ffb25a3990d5b4a07f68813b18 data\renew\advancement\recipes\combat\diamond_cutlass.json
 c758262954610f6ef96ac42a46dbe71aba21ac45 data\renew\advancement\recipes\combat\orb_of_dominance_boots.json
 9a6702d9d35bb5d069234d8404fe6fa410dfda09 data\renew\recipe\stone_scythe.json

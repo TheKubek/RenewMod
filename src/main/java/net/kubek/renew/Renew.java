@@ -5,6 +5,7 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.kubek.renew.components.ModDataComponentTypes;
 import net.kubek.renew.entity.ModEntities;
+import net.kubek.renew.entity.custom.CorruptedEnchanterEntity;
 import net.kubek.renew.entity.custom.EnchanterEntity;
 import net.kubek.renew.item.ModItems;
 import net.kubek.renew.item.ModItemsGroup;
@@ -37,5 +38,6 @@ public class Renew implements ModInitializer {
         ModEntities.registerModEntities();
 
         FabricDefaultAttributeRegistry.register(ModEntities.ENCHANTER, EnchanterEntity.createEnchanterAttributes());
+        FabricDefaultAttributeRegistry.register(ModEntities.CORRUPTED_ENCHANTER, CorruptedEnchanterEntity.createCorruptedEnchanterAttributes());
 	}
 }

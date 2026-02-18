@@ -203,6 +203,14 @@ ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.DOMINANCE_DICE)
                 .input('N',Items.NETHER_STAR)
                 .criterion(hasItem(Items.BLAZE_POWDER),conditionsFromItem(Items.BLAZE_POWDER))
                 .offerTo(recipeExporter);
+ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.GLACIER_SCYTHE)
+                .pattern("BB ")
+                .pattern(" SB")
+                .pattern(" B ")
+                .input('B',Items.BLUE_ICE)
+                .input('S',ModItems.ENCHANTER_SCYTHE)
+                .criterion(hasItem(ModItems.ENCHANTER_SCYTHE),conditionsFromItem(ModItems.ENCHANTER_SCYTHE))
+                .offerTo(recipeExporter);
 
 
 ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC,ModItems.ORB_OF_DOMINANCE)

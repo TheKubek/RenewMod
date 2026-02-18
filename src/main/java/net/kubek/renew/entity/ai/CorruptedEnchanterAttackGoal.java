@@ -1,26 +1,29 @@
 package net.kubek.renew.entity.ai;
 
-import net.kubek.renew.entity.custom.EnchanterEntity;
+import net.kubek.renew.entity.custom.CorruptedEnchanterEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.MeleeAttackGoal;
-import net.minecraft.entity.mob.*;
+import net.minecraft.entity.mob.EvokerFangsEntity;
+import net.minecraft.entity.mob.PathAwareEntity;
+import net.minecraft.entity.mob.PillagerEntity;
+import net.minecraft.entity.mob.VindicatorEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.Hand;
 
 import java.util.Random;
 
-public class EnchanterAttackGoal extends MeleeAttackGoal {
+public class CorruptedEnchanterAttackGoal extends MeleeAttackGoal {
     private final Random random = new Random();
-    private final EnchanterEntity entity;
+    private final CorruptedEnchanterEntity entity;
     private int attackDelay = 20;
     private int ticksUntilNextAttack=20;
     private boolean shouldCountTillNextAttack = false;
 
-    public EnchanterAttackGoal(PathAwareEntity mob, double speed, boolean pauseWhenMobIdle) {
+    public CorruptedEnchanterAttackGoal(PathAwareEntity mob, double speed, boolean pauseWhenMobIdle) {
         super(mob, speed, pauseWhenMobIdle);
-        entity = (EnchanterEntity) mob;
+        entity = (CorruptedEnchanterEntity) mob;
     }
 
     @Override
@@ -51,7 +54,7 @@ public class EnchanterAttackGoal extends MeleeAttackGoal {
     }
 
     private boolean isEnemyWithinAttackDistance(LivingEntity pEnemy) {
-        return this.entity.distanceTo(pEnemy) <= 15f;
+        return this.entity.distanceTo(pEnemy) <= 25f;
     }
 
     protected void resetAttackCooldown() {
@@ -99,7 +102,7 @@ public class EnchanterAttackGoal extends MeleeAttackGoal {
                 pEnemy.getWorld().spawnEntity(entity2);
             }
 
-            attackDelay = 60;
+            attackDelay = 30;
         }
         this.resetAttackCooldown();
         this.mob.swingHand(Hand.MAIN_HAND);

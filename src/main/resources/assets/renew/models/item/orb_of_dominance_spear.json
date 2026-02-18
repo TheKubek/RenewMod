@@ -4,7 +4,7 @@
 	"texture_size": [32, 32],
 	"textures": {
 		"0": "renew:item/orb_of_dominance",
-		"1": "C:/Users/kubib/Downloads/netherite_spear",
+		"1": "minecraft:item/netherite_spear",
 		"particle": "renew:item/orb_of_dominance"
 	},
 	"elements": [
