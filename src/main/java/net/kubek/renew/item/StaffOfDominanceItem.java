@@ -118,8 +118,9 @@ private static final Map<Block,Block> TRANSFORMABLE_BLOCKS_THREE = Map.of
             user.addStatusEffect(new StatusEffectInstance(StatusEffects.DARKNESS,2000, 1));
             user.addStatusEffect(new StatusEffectInstance(StatusEffects.INSTANT_DAMAGE,5, 3));
         }
-        entity.setInvisible(true);
+
         if(!(entity instanceof PlayerEntity)&&!(entity instanceof EnchanterEntity)&&!(entity instanceof CorruptedEnchanterEntity)) {
+            entity.setInvisible(true);
             entity.kill();
             entity.deathTime = 20;
             return ActionResult.PASS;
