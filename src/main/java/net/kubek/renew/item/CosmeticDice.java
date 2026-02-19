@@ -6,8 +6,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 
 import java.util.Random;
@@ -17,8 +17,9 @@ public class CosmeticDice extends Item {
         super(settings);
     }
     Random random = new Random();
+
     @Override
-    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
+    public ActionResult use(World world, PlayerEntity user, Hand hand) {
         if(!world.isClient) {
             ItemEntity item = null;
             int chance = (int) (random.nextInt(100) + 1);
@@ -38,11 +39,8 @@ public class CosmeticDice extends Item {
 
 
         }
-
-
-
-
         world.playSound(user,user.getBlockPos(), SoundEvents.ENTITY_EXPERIENCE_ORB_PICKUP, SoundCategory.PLAYERS,1,1);
-        return TypedActionResult.success(user.getStackInHand(hand),true);
+        return ActionResult.SUCCESS;
     }
+
 }

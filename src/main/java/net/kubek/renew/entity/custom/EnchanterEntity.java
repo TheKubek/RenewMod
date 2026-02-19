@@ -57,9 +57,9 @@ public class EnchanterEntity extends IllagerEntity {
 
     public static DefaultAttributeContainer.Builder createEnchanterAttributes(){
         return MobEntity.createMobAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 2000f)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED,0.33f)
-                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE,8f);
+                .add(EntityAttributes.MAX_HEALTH, 2000f)
+                .add(EntityAttributes.MOVEMENT_SPEED,0.33f)
+                .add(EntityAttributes.ATTACK_DAMAGE,8f);
 
     }
     static final Predicate<Difficulty> DIFFICULTY_ALLOWS_DOOR_BREAKING_PREDICATE = difficulty -> difficulty == Difficulty.NORMAL || difficulty == Difficulty.HARD;
@@ -162,7 +162,7 @@ public class EnchanterEntity extends IllagerEntity {
     }
     static class TargetGoal extends ActiveTargetGoal<LivingEntity> {
         public TargetGoal(EnchanterEntity enchanter) {
-            super(enchanter, LivingEntity.class, 0, true, true, LivingEntity::isMobOrPlayer);
+            super(enchanter, LivingEntity.class, 0, true, true, (target, world) -> target.isMobOrPlayer());
         }
 
         @Override
@@ -190,10 +190,11 @@ public class EnchanterEntity extends IllagerEntity {
     }
 
     @Override
-    protected void mobTick() {
-        super.mobTick();
+    protected void mobTick(ServerWorld world) {
+        super.mobTick(world);
         this.bossBar.setPercent(this.getHealth()/this.getMaxHealth());
     }
+
 
     @Override
     protected @Nullable SoundEvent getAmbientSound() {

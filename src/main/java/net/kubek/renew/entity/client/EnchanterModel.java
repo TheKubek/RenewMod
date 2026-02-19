@@ -1,14 +1,11 @@
 package net.kubek.renew.entity.client;
 
 import net.kubek.renew.entity.client.animation.EnchanterAnimations;
-import net.kubek.renew.entity.custom.EnchanterEntity;
 import net.minecraft.client.model.*;
-import net.minecraft.client.render.VertexConsumer;
-import net.minecraft.client.render.entity.model.SinglePartEntityModel;
-import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.util.math.MathHelper;
 
-public class EnchanterModel extends SinglePartEntityModel<EnchanterEntity> {
+public class EnchanterModel extends EntityModel<EnchanterRenderState> {
     private final ModelPart enchanter;
     private final ModelPart legs;
     private final ModelPart left;
@@ -21,6 +18,7 @@ public class EnchanterModel extends SinglePartEntityModel<EnchanterEntity> {
     private final ModelPart left2;
     private final ModelPart head;
     public EnchanterModel(ModelPart root) {
+        super(root);
         this.enchanter = root.getChild("enchanter");
         this.legs = this.enchanter.getChild("legs");
         this.left = this.legs.getChild("left");
@@ -85,14 +83,15 @@ public class EnchanterModel extends SinglePartEntityModel<EnchanterEntity> {
                 .uv(74, 12).cuboid(-1.75F, -8.5F, -3.75F, 3.0F, 8.0F, 3.0F, new Dilation(0.0F)), ModelTransform.pivot(0.25F, -35.5F, -2.25F));
         return TexturedModelData.of(modelData, 128, 128);
     }
-    @Override
-    public void setAngles(EnchanterEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-        this.getPart().traverse().forEach(ModelPart::resetTransform);
-        this.setHeadAngle(netHeadYaw,headPitch);
 
-        this.animateMovement(EnchanterAnimations.walk,limbSwing,limbSwingAmount,4f,2.5f);
-        this.updateAnimation(entity.idleAnimationState,EnchanterAnimations.idle,ageInTicks,1f);
-        this.updateAnimation(entity.attackAnimationState,EnchanterAnimations.attack,ageInTicks,1f);
+    @Override
+    public void setAngles(EnchanterRenderState state) {
+        this.getPart().traverse().forEach(ModelPart::resetTransform);
+        this.setHeadAngle(state.yawDegrees,state.yawDegrees);
+
+        this.animateWalking(EnchanterAnimations.walk,state.limbFrequency,state.limbAmplitudeMultiplier,4f,2.5f);
+        this.animate(state.idleAnimationState,EnchanterAnimations.idle, state.age,1f);
+        this.animate(state.attackAnimationState,EnchanterAnimations.attack,state.age,1f);
 
     }
     private void setHeadAngle(float headYaw, float headPitch){
@@ -101,12 +100,8 @@ public class EnchanterModel extends SinglePartEntityModel<EnchanterEntity> {
         this.head.yaw=headYaw*0.017453292F;
         this.head.pitch=headPitch*0.017453292F;
     }
-    @Override
-    public void render(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int overlay, int color) {
-        enchanter.render(matrices, vertexConsumer, light, overlay, color);
-    }
 
-    @Override
+
     public ModelPart getPart() {
         return enchanter;
     }

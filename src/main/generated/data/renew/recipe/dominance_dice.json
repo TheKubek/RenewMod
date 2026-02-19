@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "B": {
-      "item": "minecraft:blaze_powder"
-    },
-    "C": {
-      "item": "minecraft:coal_block"
-    },
-    "N": {
-      "item": "minecraft:nether_star"
-    }
+    "B": "minecraft:blaze_powder",
+    "C": "minecraft:coal_block",
+    "N": "minecraft:nether_star"
   },
   "pattern": [
     "CBC",

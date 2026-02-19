@@ -51,11 +51,11 @@ public class CorruptedEnchanterEntity extends IllagerEntity {
 
     public static DefaultAttributeContainer.Builder createCorruptedEnchanterAttributes(){
         return MobEntity.createMobAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 4000f)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED,0.4f)
-                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE,20f)
-                .add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE,2f)
-                .add(EntityAttributes.GENERIC_ARMOR,4f);
+                .add(EntityAttributes.MAX_HEALTH, 4000f)
+                .add(EntityAttributes.MOVEMENT_SPEED,0.4f)
+                .add(EntityAttributes.ATTACK_DAMAGE,20f)
+                .add(EntityAttributes.KNOCKBACK_RESISTANCE,2f)
+                .add(EntityAttributes.ARMOR,4f);
 
     }
     static final Predicate<Difficulty> DIFFICULTY_ALLOWS_DOOR_BREAKING_PREDICATE = difficulty -> difficulty == Difficulty.NORMAL || difficulty == Difficulty.HARD;
@@ -155,7 +155,7 @@ public class CorruptedEnchanterEntity extends IllagerEntity {
     }
     static class TargetGoal extends ActiveTargetGoal<LivingEntity> {
         public TargetGoal(CorruptedEnchanterEntity enchanter) {
-            super(enchanter, LivingEntity.class, 0, true, true, LivingEntity::isMobOrPlayer);
+            super(enchanter, LivingEntity.class, 0, true, true, (target, world) -> target.isMobOrPlayer());
         }
 
         @Override
@@ -188,10 +188,11 @@ public class CorruptedEnchanterEntity extends IllagerEntity {
     }
 
     @Override
-    protected void mobTick() {
-        super.mobTick();
+    protected void mobTick(ServerWorld world) {
+        super.mobTick(world);
         this.bossBar.setPercent(this.getHealth()/this.getMaxHealth());
     }
+
 
     @Override
     public void onDamaged(DamageSource damageSource) {

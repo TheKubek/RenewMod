@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "G": {
-      "item": "minecraft:gold_ingot"
-    },
-    "I": {
-      "item": "minecraft:iron_ingot"
-    },
-    "N": {
-      "item": "minecraft:gold_nugget"
-    },
-    "S": {
-      "item": "minecraft:stick"
-    },
-    "X": {
-      "item": "minecraft:netherite_scrap"
-    }
+    "G": "minecraft:gold_ingot",
+    "I": "minecraft:iron_ingot",
+    "N": "minecraft:gold_nugget",
+    "S": "minecraft:stick",
+    "X": "minecraft:netherite_scrap"
   },
   "pattern": [
     "NXI",

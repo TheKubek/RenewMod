@@ -21,6 +21,8 @@ public class ModTags {
         public static class Items {
         public static final TagKey<Item> CUTLASSES =createTag("cutlasses");
         public static final TagKey<Item> SCYTHES =createTag("scythes");
+        public static final TagKey<Item> ORB_OF_DOMINANCE =createTag("orb_of_dominance");
+
 
 
 

@@ -3,6 +3,7 @@ package net.kubek.renew.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.kubek.renew.item.ModItems;
+import net.kubek.renew.item.OrbOfDominanceParts;
 import net.kubek.renew.item.OrbOfDominanceTools;
 import net.kubek.renew.util.ModTags;
 import net.minecraft.registry.RegistryWrapper;
@@ -62,8 +63,16 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.ORB_OF_DOMINANCE_LEGGINGS);
         getOrCreateTagBuilder(ItemTags.FOOT_ARMOR)
                 .add(ModItems.ORB_OF_DOMINANCE_BOOTS);
-
-
-
+        getOrCreateTagBuilder(ModTags.Items.ORB_OF_DOMINANCE)
+                .add(ModItems.ORB_OF_DOMINANCE)
+                .add(OrbOfDominanceParts.ORB_OF_DOMINANCE_PART_ONE)
+                .add(OrbOfDominanceParts.ORB_OF_DOMINANCE_PART_TWO)
+                .add(OrbOfDominanceParts.ORB_OF_DOMINANCE_PART_THREE)
+                .add(OrbOfDominanceParts.ORB_OF_DOMINANCE_PART_FOUR)
+                .add(OrbOfDominanceParts.ORB_OF_DOMINANCE_PART_FIVE)
+                .add(OrbOfDominanceParts.ORB_OF_DOMINANCE_PART_SIX)
+                .add(OrbOfDominanceParts.ORB_OF_DOMINANCE_PART_SEVEN)
+                .add(OrbOfDominanceParts.ORB_OF_DOMINANCE_PART_EIGHT)
+                .add(OrbOfDominanceParts.ORB_OF_DOMINANCE_PART_NINE);
     }
 }

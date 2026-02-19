@@ -2,11 +2,15 @@ package net.kubek.renew.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
+import net.kubek.renew.Renew;
+import net.kubek.renew.item.ModArmorMaterials;
 import net.kubek.renew.item.ModItems;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorItem;
+import net.minecraft.util.Identifier;
 
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
@@ -34,10 +38,10 @@ public class ModModelProvider extends FabricModelProvider {
     itemModelGenerator.register(ModItems.NETHERITE_SCYTHE, Models.HANDHELD);
     itemModelGenerator.register(ModItems.ENCHANTER_SCYTHE, Models.HANDHELD);
     itemModelGenerator.register(ModItems.GLACIER_SCYTHE, Models.HANDHELD);
-    itemModelGenerator.registerArmor(((ArmorItem) ModItems.ORB_OF_DOMINANCE_HELMET));
-    itemModelGenerator.registerArmor(((ArmorItem) ModItems.ORB_OF_DOMINANCE_CHESTPLATE));
-    itemModelGenerator.registerArmor(((ArmorItem) ModItems.ORB_OF_DOMINANCE_LEGGINGS));
-    itemModelGenerator.registerArmor(((ArmorItem) ModItems.ORB_OF_DOMINANCE_BOOTS));
+    itemModelGenerator.registerArmor(((ArmorItem) ModItems.ORB_OF_DOMINANCE_HELMET), Identifier.of(Renew.MOD_ID,"orb_of_dominance"), ModArmorMaterials.ORB_OF_DOMINANCE, EquipmentSlot.HEAD);
+    itemModelGenerator.registerArmor(((ArmorItem) ModItems.ORB_OF_DOMINANCE_CHESTPLATE), Identifier.of(Renew.MOD_ID,"orb_of_dominance"), ModArmorMaterials.ORB_OF_DOMINANCE, EquipmentSlot.CHEST);
+    itemModelGenerator.registerArmor(((ArmorItem) ModItems.ORB_OF_DOMINANCE_LEGGINGS), Identifier.of(Renew.MOD_ID,"orb_of_dominance"), ModArmorMaterials.ORB_OF_DOMINANCE, EquipmentSlot.LEGS);
+    itemModelGenerator.registerArmor(((ArmorItem) ModItems.ORB_OF_DOMINANCE_BOOTS), Identifier.of(Renew.MOD_ID,"orb_of_dominance"), ModArmorMaterials.ORB_OF_DOMINANCE, EquipmentSlot.FEET);
 
     }
 }

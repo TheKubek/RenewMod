@@ -2,17 +2,13 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "#": {
-      "item": "minecraft:stick"
-    },
-    "X": {
-      "item": "minecraft:diamond"
-    }
+    "#": "minecraft:stick",
+    "X": "minecraft:diamond"
   },
   "pattern": [
-    " X ",
-    " X ",
-    " #X"
+    "XX ",
+    " #X",
+    " # "
   ],
   "result": {
     "count": 1,

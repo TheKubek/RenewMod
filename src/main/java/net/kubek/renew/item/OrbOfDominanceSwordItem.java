@@ -16,9 +16,11 @@ import net.minecraft.text.Text;
 import java.util.List;
 
 public class OrbOfDominanceSwordItem extends SwordItem {
-    public OrbOfDominanceSwordItem(ToolMaterial toolMaterial, Settings settings) {
-        super(toolMaterial, settings);
+
+    public OrbOfDominanceSwordItem(ToolMaterial material, float attackDamage, float attackSpeed, Settings settings) {
+        super(material, attackDamage, attackSpeed, settings);
     }
+
     @Override
     public float getBonusAttackDamage(Entity target, float baseAttackDamage, DamageSource damageSource) {
         assert damageSource.getAttacker() != null;

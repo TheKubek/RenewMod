@@ -5,13 +5,9 @@ import net.kubek.renew.entity.custom.CorruptedEnchanterEntity;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.EntityModel;
-import net.minecraft.client.render.entity.model.SinglePartEntityModel;
-import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.MathHelper;
 
-public class CorruptedEnchanterModel<T extends CorruptedEnchanterEntity> extends SinglePartEntityModel<T> {
+public class CorruptedEnchanterModel extends EntityModel<CorruptedEnchanterRenderState> {
     private final ModelPart enchanter;
     private final ModelPart legs;
     private final ModelPart left;
@@ -23,6 +19,7 @@ public class CorruptedEnchanterModel<T extends CorruptedEnchanterEntity> extends
     private final ModelPart head;
     private final ModelPart orb;
     public CorruptedEnchanterModel(ModelPart root) {
+        super(root);
         this.enchanter = root.getChild("enchanter");
         this.legs = this.enchanter.getChild("legs");
         this.left = this.legs.getChild("left");
@@ -69,13 +66,14 @@ public class CorruptedEnchanterModel<T extends CorruptedEnchanterEntity> extends
         return TexturedModelData.of(modelData, 128, 128);
     }
     @Override
-    public void setAngles(CorruptedEnchanterEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+    public void setAngles(CorruptedEnchanterRenderState state) {
+        super.setAngles(state);
         this.getPart().traverse().forEach(ModelPart::resetTransform);
-        this.setHeadAngle(netHeadYaw,headPitch);
+        this.setHeadAngle(state.yawDegrees,state.yawDegrees);
 
-        this.animateMovement(CorruptedEnchanterAnimation.walk,limbSwing,limbSwingAmount,4f,2.5f);
-        this.updateAnimation(entity.idleAnimationState,CorruptedEnchanterAnimation.idle,ageInTicks,1f);
-        this.updateAnimation(entity.attackAnimationState,CorruptedEnchanterAnimation.attack,ageInTicks,1f);
+        this.animateWalking(CorruptedEnchanterAnimation.walk,state.limbFrequency,state.limbAmplitudeMultiplier,4f,2.5f);
+        this.animate(state.idleAnimationState,CorruptedEnchanterAnimation.idle,state.age,1f);
+        this.animate(state.attackAnimationState,CorruptedEnchanterAnimation.attack,state.age,1f);
 
     }
     private void setHeadAngle(float headYaw, float headPitch){
@@ -84,16 +82,10 @@ public class CorruptedEnchanterModel<T extends CorruptedEnchanterEntity> extends
         this.head.yaw=headYaw*0.017453292F;
         this.head.pitch=headPitch*0.017453292F;
     }
-
-    @Override
-    public void render(MatrixStack matrices, VertexConsumer vertices, int light, int overlay, int color) {
-        enchanter.render(matrices, vertices, light, overlay, color);
-    }
-
-    @Override
     public ModelPart getPart() {
-        return this.enchanter;
+        return enchanter;
     }
+
 
 
 }

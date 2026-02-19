@@ -1,0 +1,24 @@
+{
+  "layers": {
+    "wolf_body": [
+      {
+        "texture": "renew:orb_of_dominance"
+      }
+    ],
+    "horse_body": [
+      {
+        "texture": "renew:orb_of_dominance"
+      }
+    ],
+    "humanoid": [
+      {
+        "texture": "renew:orb_of_dominance"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "renew:orb_of_dominance"
+      }
+    ]
+  }
+}

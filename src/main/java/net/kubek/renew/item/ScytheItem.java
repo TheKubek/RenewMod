@@ -15,9 +15,10 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class ScytheItem extends HoeItem {
-    public ScytheItem(ToolMaterial toolMaterial, Settings settings) {
-        super(toolMaterial, settings);
+    public ScytheItem(ToolMaterial material, float attackDamage, float attackSpeed, Settings settings) {
+        super(material, attackDamage, attackSpeed, settings);
     }
+
     @Override
     public ActionResult useOnBlock(ItemUsageContext context) {
         World world = context.getWorld();

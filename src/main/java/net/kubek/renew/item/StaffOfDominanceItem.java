@@ -22,6 +22,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.item.Items;
 import net.minecraft.item.tooltip.TooltipType;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
@@ -29,6 +30,7 @@ import net.minecraft.world.World;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 public class StaffOfDominanceItem extends Item {
     public StaffOfDominanceItem(Settings settings) {
@@ -97,34 +99,31 @@ private static final Map<Block,Block> TRANSFORMABLE_BLOCKS_THREE = Map.of
         return ActionResult.SUCCESS;
     }
 
-
-    @Override
+        @Override
     public ActionResult useOnEntity(ItemStack stack, PlayerEntity user, LivingEntity entity, Hand hand) {
-        World world = user.getWorld();
-        if(entity instanceof ZombieEntity)
-        {
-            SkeletonEntity skeletonEntity = new SkeletonEntity(EntityType.SKELETON,world);
-            skeletonEntity.setPosition(entity.getPos());
-            skeletonEntity.equipStack(EquipmentSlot.MAINHAND, entity.getMainHandStack());
-            world.spawnEntity(skeletonEntity);
-        }
-        else if(entity instanceof BatEntity)
-        {
-            BeeEntity beeEntity = new BeeEntity(EntityType.BEE,world);
-            beeEntity.setPosition(entity.getPos());
-            world.spawnEntity(beeEntity);
-        }
-        else if(entity instanceof WitherEntity){
-            user.addStatusEffect(new StatusEffectInstance(StatusEffects.DARKNESS,2000, 1));
-            user.addStatusEffect(new StatusEffectInstance(StatusEffects.INSTANT_DAMAGE,5, 3));
-        }
+            World world = entity.getWorld();
+            if(!world.isClient) {
+                if (entity instanceof ZombieEntity) {
+                    SkeletonEntity skeletonEntity = new SkeletonEntity(EntityType.SKELETON, world);
+                    skeletonEntity.setPosition(entity.getPos());
+                    skeletonEntity.equipStack(EquipmentSlot.MAINHAND, entity.getMainHandStack());
+                    world.spawnEntity(skeletonEntity);
+                } else if (entity instanceof BatEntity) {
+                    BeeEntity beeEntity = new BeeEntity(EntityType.BEE, world);
+                    beeEntity.setPosition(entity.getPos());
+                    world.spawnEntity(beeEntity);
+                } else if (entity instanceof WitherEntity) {
+                    user.addStatusEffect(new StatusEffectInstance(StatusEffects.DARKNESS, 2000, 1));
+                    user.addStatusEffect(new StatusEffectInstance(StatusEffects.INSTANT_DAMAGE, 5, 3));
+                }
+                if (!(entity instanceof PlayerEntity) && !(entity instanceof EnchanterEntity) && !(entity instanceof CorruptedEnchanterEntity)) {
+                    entity.setInvisible(true);
+                    entity.kill(world.getServer().getWorld(world.getRegistryKey()));
+                    entity.deathTime = 20;
 
-        if(!(entity instanceof PlayerEntity)&&!(entity instanceof EnchanterEntity)&&!(entity instanceof CorruptedEnchanterEntity)) {
-            entity.setInvisible(true);
-            entity.kill();
-            entity.deathTime = 20;
-            return ActionResult.PASS;
-        }
+                }
+            }
+
         return ActionResult.SUCCESS;
     }
 

@@ -10,6 +10,7 @@ import net.minecraft.entity.mob.PillagerEntity;
 import net.minecraft.entity.mob.VindicatorEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.Hand;
 
 import java.util.Random;
@@ -71,7 +72,7 @@ public class CorruptedEnchanterAttackGoal extends MeleeAttackGoal {
 
     protected void performAttack(LivingEntity pEnemy) {
         if(this.entity.distanceTo(pEnemy)<=6f){
-            this.mob.tryAttack(pEnemy);
+            this.mob.tryAttack(pEnemy.getWorld().getServer().getWorld(pEnemy.getWorld().getRegistryKey()),pEnemy);
             attackDelay = 20;
         }
         else{

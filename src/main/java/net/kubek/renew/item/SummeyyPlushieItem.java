@@ -9,8 +9,8 @@ import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 
 import java.util.List;
@@ -21,7 +21,7 @@ public class SummeyyPlushieItem extends PlushieItem {
     }
 
     @Override
-    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
+    public ActionResult use(World world, PlayerEntity user, Hand hand) {
         world.playSound(user, user.getBlockPos(), SoundEvents.ENTITY_BAT_AMBIENT, SoundCategory.PLAYERS, 10f, 1f);
         if(!world.isClient&&user.getUuidAsString()=="86a471bf-b691-4d7e-9bf1-23563b5a201a") {
             user.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION,200,1));
@@ -29,7 +29,7 @@ public class SummeyyPlushieItem extends PlushieItem {
             user.giveItemStack(new ItemStack(Items.CAKE,1));
         }
 
-        return TypedActionResult.success(user.getStackInHand(hand),true);
+        return ActionResult.SUCCESS;
 
     }
 

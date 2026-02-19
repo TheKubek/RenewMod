@@ -8,8 +8,9 @@ import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
 
 public class DancerSwordItem extends SwordItem {
-    public DancerSwordItem(ToolMaterial toolMaterial, Settings settings) {
-        super(toolMaterial, settings);
+
+    public DancerSwordItem(ToolMaterial material, float attackDamage, float attackSpeed, Settings settings) {
+        super(material, attackDamage, attackSpeed, settings);
     }
 
     @Override

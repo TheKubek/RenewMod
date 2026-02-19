@@ -2,13 +2,11 @@ package net.kubek.renew.entity.client;
 
 import net.kubek.renew.Renew;
 import net.kubek.renew.entity.custom.CorruptedEnchanterEntity;
-import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
-import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 
-public class CorruptedEnchanterRenderer extends MobEntityRenderer<CorruptedEnchanterEntity,CorruptedEnchanterModel<CorruptedEnchanterEntity>> {
+public class CorruptedEnchanterRenderer extends MobEntityRenderer<CorruptedEnchanterEntity,CorruptedEnchanterRenderState,CorruptedEnchanterModel> {
     public CorruptedEnchanterRenderer(EntityRendererFactory.Context context) {
         super(context, new CorruptedEnchanterModel(context.getPart(ModEntityModelLayers.CORRUPTED_ENCHANTER)),0.6F);
         this.addFeature(new CorruptedEnchanterEyesFeatureRender(this));
@@ -16,12 +14,19 @@ public class CorruptedEnchanterRenderer extends MobEntityRenderer<CorruptedEncha
     }
 
     @Override
-    public Identifier getTexture(CorruptedEnchanterEntity entity) {
+    public CorruptedEnchanterRenderState createRenderState() {
+        return new CorruptedEnchanterRenderState();
+    }
+
+    @Override
+    public Identifier getTexture(CorruptedEnchanterRenderState state) {
         return Identifier.of(Renew.MOD_ID, "textures/entity/corrupted_enchanter.png");
     }
 
     @Override
-    public void render(CorruptedEnchanterEntity livingEntity, float f, float g, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i) {
-        super.render(livingEntity, f, g, matrixStack, vertexConsumerProvider, i);
+    public void updateRenderState(CorruptedEnchanterEntity livingEntity, CorruptedEnchanterRenderState livingEntityRenderState, float f) {
+        super.updateRenderState(livingEntity, livingEntityRenderState, f);
+        livingEntityRenderState.idleAnimationState.copyFrom(livingEntity.idleAnimationState);
+        livingEntityRenderState.attackAnimationState.copyFrom(livingEntity.attackAnimationState);
     }
 }

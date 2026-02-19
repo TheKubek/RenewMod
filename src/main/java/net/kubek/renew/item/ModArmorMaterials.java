@@ -3,8 +3,11 @@ package net.kubek.renew.item;
 
 
 import net.kubek.renew.Renew;
+import net.kubek.renew.util.ModTags;
 import net.minecraft.item.ArmorItem;
-import net.minecraft.item.ArmorMaterial;
+import net.minecraft.item.equipment.ArmorMaterial;
+import net.minecraft.item.equipment.EquipmentModel;
+import net.minecraft.item.equipment.EquipmentType;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -18,18 +21,13 @@ import java.util.List;
 import java.util.function.Supplier;
 
 public class ModArmorMaterials {
-    public static final RegistryEntry<ArmorMaterial> ORB_OF_DOMINANCE_ARMOR_MATERIAL = registerArmorMaterial("orb_of_dominance",
-            () -> new ArmorMaterial(Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
-                map.put(ArmorItem.Type.BOOTS, 6);
-                map.put(ArmorItem.Type.LEGGINGS, 12);
-                map.put(ArmorItem.Type.CHESTPLATE, 16);
-                map.put(ArmorItem.Type.HELMET, 6);
-                map.put(ArmorItem.Type.BODY, 22);
-            }), 35, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, () -> Ingredient.ofItems(ModItems.ORB_OF_DOMINANCE),
-                    List.of(new ArmorMaterial.Layer(Identifier.of(Renew.MOD_ID, "orb_of_dominance"))), 6f, 1f));
+    public static EquipmentModel ORB_OF_DOMINANCE = EquipmentModel.builder().addHumanoidLayers(Identifier.of(Renew.MOD_ID, "orb_of_dominance")).build();
 
-
-    public static RegistryEntry<ArmorMaterial> registerArmorMaterial(String name, Supplier<ArmorMaterial> material) {
-        return Registry.registerReference(Registries.ARMOR_MATERIAL, Identifier.of(Renew.MOD_ID, name), material.get());
-    }
+    public static final ArmorMaterial ORB_OF_DOMINANCE_ARMOR_MATERIAL = new ArmorMaterial(7000, Util.make(new EnumMap<>(EquipmentType.class), map -> {
+        map.put(EquipmentType.BOOTS, 6);
+        map.put(EquipmentType.LEGGINGS, 12);
+        map.put(EquipmentType.CHESTPLATE, 16);
+        map.put(EquipmentType.HELMET, 6);
+        map.put(EquipmentType.BODY, 22);
+    }),20,SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE,6f,1f, ModTags.Items.ORB_OF_DOMINANCE,Identifier.of(Renew.MOD_ID,"orb_of_dominance"));
 }

@@ -68,7 +68,7 @@ public class EnchanterAttackGoal extends MeleeAttackGoal {
 
     protected void performAttack(LivingEntity pEnemy) {
         if(this.entity.distanceTo(pEnemy)<=6f){
-            this.mob.tryAttack(pEnemy);
+            this.mob.tryAttack(pEnemy.getWorld().getServer().getWorld(pEnemy.getWorld().getRegistryKey()),pEnemy);
             attackDelay = 20;
         }
         else{

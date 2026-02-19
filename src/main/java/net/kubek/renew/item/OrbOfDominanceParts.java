@@ -11,6 +11,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
@@ -33,7 +35,7 @@ public class OrbOfDominanceParts{
 
 
     private static Item registerPart(String name, RegistryEntry<StatusEffect> statusEffect, int amplifier){
-        return Registry.register(Registries.ITEM, Identifier.of(Renew.MOD_ID,name),new Item(new Item.Settings().maxCount(1).fireproof().rarity(Rarity.EPIC)){
+        return Registry.register(Registries.ITEM, Identifier.of(Renew.MOD_ID,name),new Item(new Item.Settings().maxCount(1).fireproof().rarity(Rarity.EPIC).registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Renew.MOD_ID, name)))){
             @Override
             public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
                 if(entity instanceof PlayerEntity player)
