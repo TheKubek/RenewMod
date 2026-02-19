@@ -212,6 +212,7 @@ public class EnchanterEntity extends IllagerEntity {
 
     @Override
     public void onDeath(DamageSource damageSource) {
+        assert damageSource.getAttacker() != null;
         World world = damageSource.getAttacker().getWorld();
         CorruptedEnchanterEntity corruptedEnchanterEntity = new CorruptedEnchanterEntity(ModEntities.CORRUPTED_ENCHANTER, world);
         corruptedEnchanterEntity.setPosition(this.getPos());
