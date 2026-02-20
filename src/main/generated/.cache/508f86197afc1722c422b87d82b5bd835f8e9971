@@ -1,13 +1,13 @@
-// 1.21.2	2026-02-19T18:45:11.4490603	Renew/Tags for minecraft:item
-503f23043c9c74e004c0be13322ed32e3e112718 data\minecraft\tags\item\chest_armor.json
-36f8abcdd27e48e44402d503ed3200eddc2d9089 data\minecraft\tags\item\leg_armor.json
-6571e0fbf4cc1cc836424d39f30d8d0674d4ce2c data\minecraft\tags\item\shovels.json
-44596631aa2630ae50ae9e80047e4f49b2772ef5 data\minecraft\tags\item\hoes.json
-f673ef528aa29c1894395cd72e1a92721ff24494 data\minecraft\tags\item\head_armor.json
-19ece73dbb0873b1fa59d4cdef2e410b31b6ef4d data\renew\tags\item\cutlasses.json
-e50919a6ca964cc871f3bc0515656eff95122804 data\minecraft\tags\item\foot_armor.json
-f72082c00272a02ff9c8f2b14ab5b359b0e90400 data\minecraft\tags\item\axes.json
-834d81019848536fc2459515b026e9e0bfe556f6 data\minecraft\tags\item\pickaxes.json
-b0a505fbdb3606fa7bc9a7c9f160fcc7f04c2395 data\renew\tags\item\orb_of_dominance.json
-829b6382d4cd65ff1c0065842efb183dde051b55 data\minecraft\tags\item\swords.json
-2ea5cd5c9cbce04f10fccbfc176bf5b592b24855 data\renew\tags\item\scythes.json
+// 1.21.4	-999999999-01-01T00:00:00	Renew/Tags for minecraft:item
+f72082c00272a02ff9c8f2b14ab5b359b0e90400 data/minecraft/tags/item/axes.json
+503f23043c9c74e004c0be13322ed32e3e112718 data/minecraft/tags/item/chest_armor.json
+e50919a6ca964cc871f3bc0515656eff95122804 data/minecraft/tags/item/foot_armor.json
+f673ef528aa29c1894395cd72e1a92721ff24494 data/minecraft/tags/item/head_armor.json
+44596631aa2630ae50ae9e80047e4f49b2772ef5 data/minecraft/tags/item/hoes.json
+36f8abcdd27e48e44402d503ed3200eddc2d9089 data/minecraft/tags/item/leg_armor.json
+834d81019848536fc2459515b026e9e0bfe556f6 data/minecraft/tags/item/pickaxes.json
+6571e0fbf4cc1cc836424d39f30d8d0674d4ce2c data/minecraft/tags/item/shovels.json
+829b6382d4cd65ff1c0065842efb183dde051b55 data/minecraft/tags/item/swords.json
+19ece73dbb0873b1fa59d4cdef2e410b31b6ef4d data/renew/tags/item/cutlasses.json
+b0a505fbdb3606fa7bc9a7c9f160fcc7f04c2395 data/renew/tags/item/orb_of_dominance.json
+2ea5cd5c9cbce04f10fccbfc176bf5b592b24855 data/renew/tags/item/scythes.json
