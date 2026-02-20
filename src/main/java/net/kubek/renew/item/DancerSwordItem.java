@@ -1,22 +1,29 @@
 package net.kubek.renew.item;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.SwordItem;
-import net.minecraft.item.ToolMaterial;
 
-public class DancerSwordItem extends SwordItem {
+import net.minecraft.item.ToolMaterial;
+import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+
+public class DancerSwordItem extends Item {
 
     public DancerSwordItem(ToolMaterial material, float attackDamage, float attackSpeed, Settings settings) {
-        super(material, attackDamage, attackSpeed, settings);
+        super(settings.tool(material, BlockTags.SWORD_EFFICIENT,attackDamage,attackSpeed,1f));
     }
 
+
+
     @Override
-    public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+    public void postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         if(!target.isDead()) attacker.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED,40));
         else attacker.addStatusEffect(new StatusEffectInstance(StatusEffects.HASTE,200,2));
-        return super.postHit(stack, target, attacker);
+        super.postHit(stack, target, attacker);
     }
 }

@@ -7,7 +7,6 @@ import net.kubek.renew.item.ModItems;
 import net.minecraft.client.data.BlockStateModelGenerator;
 import net.minecraft.client.data.ItemModelGenerator;
 import net.minecraft.client.data.Models;
-import net.minecraft.item.ArmorItem;
 
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
@@ -36,10 +35,10 @@ public class ModModelProvider extends FabricModelProvider {
     itemModelGenerator.register(ModItems.ENCHANTER_SCYTHE, Models.HANDHELD);
     itemModelGenerator.register(ModItems.GLACIER_SCYTHE, Models.HANDHELD);
 
-    itemModelGenerator.registerArmor(((ArmorItem) ModItems.ORB_OF_DOMINANCE_HELMET), ModArmorMaterials.ORB_OF_DOMINANCE_KEY, "helmet",false);
-    itemModelGenerator.registerArmor(((ArmorItem) ModItems.ORB_OF_DOMINANCE_CHESTPLATE), ModArmorMaterials.ORB_OF_DOMINANCE_KEY,"chestplate",false);
-    itemModelGenerator.registerArmor(((ArmorItem) ModItems.ORB_OF_DOMINANCE_LEGGINGS), ModArmorMaterials.ORB_OF_DOMINANCE_KEY,"leggings",false);
-    itemModelGenerator.registerArmor(((ArmorItem) ModItems.ORB_OF_DOMINANCE_BOOTS), ModArmorMaterials.ORB_OF_DOMINANCE_KEY,"boots",false);
+    itemModelGenerator.registerArmor(( ModItems.ORB_OF_DOMINANCE_HELMET), ModArmorMaterials.ORB_OF_DOMINANCE_KEY, ItemModelGenerator.HELMET_TRIM_ID_PREFIX,false);
+    itemModelGenerator.registerArmor(( ModItems.ORB_OF_DOMINANCE_CHESTPLATE), ModArmorMaterials.ORB_OF_DOMINANCE_KEY,ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX,false);
+    itemModelGenerator.registerArmor(( ModItems.ORB_OF_DOMINANCE_LEGGINGS), ModArmorMaterials.ORB_OF_DOMINANCE_KEY,ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX,false);
+    itemModelGenerator.registerArmor(( ModItems.ORB_OF_DOMINANCE_BOOTS), ModArmorMaterials.ORB_OF_DOMINANCE_KEY,ItemModelGenerator.BOOTS_TRIM_ID_PREFIX,false);
 
 
     }

@@ -22,7 +22,7 @@ public class EnchanterScytheItem extends ScytheItem {
     }
 
     @Override
-    public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+    public void postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         World world = attacker.getWorld();
         ServerWorld serverWorld = Objects.requireNonNull(world.getServer()).getWorld(world.getRegistryKey());
         if(attacker instanceof PlayerEntity entity) {
@@ -39,7 +39,7 @@ public class EnchanterScytheItem extends ScytheItem {
 
             }
         }
-        return super.postHit(stack, target, attacker);
+        super.postHit(stack, target, attacker);
 
     }
 

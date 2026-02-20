@@ -19,7 +19,7 @@ public class CorruptedEnchanterAnimation {
                     new Keyframe(1.0F, AnimationHelper.createRotationalVector(-32.5F, 0.0F, 0.0F), Transformation.Interpolations.LINEAR),
                     new Keyframe(2.0F, AnimationHelper.createRotationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.LINEAR)
             ))
-            .addBoneAnimation("head", new Transformation(Transformation.Targets.TRANSLATE,
+            .addBoneAnimation("head", new Transformation(Transformation.Targets.MOVE_ORIGIN,
                     new Keyframe(0.0F, AnimationHelper.createTranslationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.LINEAR),
                     new Keyframe(1.0F, AnimationHelper.createTranslationalVector(0.0F, -1.0F, 0.0F), Transformation.Interpolations.LINEAR),
                     new Keyframe(2.0F, AnimationHelper.createTranslationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.LINEAR)
@@ -35,7 +35,7 @@ public class CorruptedEnchanterAnimation {
                     new Keyframe(1.75F, AnimationHelper.createRotationalVector(0.0F, -365.0F, 0.0F), Transformation.Interpolations.LINEAR),
                     new Keyframe(2.0F, AnimationHelper.createRotationalVector(0.0F, -400.0F, 0.0F), Transformation.Interpolations.LINEAR)
             ))
-            .addBoneAnimation("orb", new Transformation(Transformation.Targets.TRANSLATE,
+            .addBoneAnimation("orb", new Transformation(Transformation.Targets.MOVE_ORIGIN,
                     new Keyframe(0.0F, AnimationHelper.createTranslationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.LINEAR),
                     new Keyframe(0.1667F, AnimationHelper.createTranslationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.LINEAR)
             ))
@@ -85,7 +85,7 @@ public class CorruptedEnchanterAnimation {
                     new Keyframe(0.75F, AnimationHelper.createRotationalVector(0.0F, -152.5F, 0.0F), Transformation.Interpolations.LINEAR),
                     new Keyframe(2.0F, AnimationHelper.createRotationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.LINEAR)
             ))
-            .addBoneAnimation("orb", new Transformation(Transformation.Targets.TRANSLATE,
+            .addBoneAnimation("orb", new Transformation(Transformation.Targets.MOVE_ORIGIN,
                     new Keyframe(0.0F, AnimationHelper.createTranslationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.LINEAR),
                     new Keyframe(0.25F, AnimationHelper.createTranslationalVector(0.0F, 0.0F, -5.0F), Transformation.Interpolations.LINEAR),
                     new Keyframe(0.75F, AnimationHelper.createTranslationalVector(-1.0F, 0.0F, -3.0F), Transformation.Interpolations.LINEAR),

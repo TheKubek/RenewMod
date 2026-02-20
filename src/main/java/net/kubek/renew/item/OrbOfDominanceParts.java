@@ -1,7 +1,9 @@
 package net.kubek.renew.item;
 
 import net.kubek.renew.Renew;
+import net.minecraft.component.type.TooltipDisplayComponent;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
@@ -14,12 +16,15 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.function.Consumer;
 
 public class OrbOfDominanceParts{
 
@@ -37,18 +42,18 @@ public class OrbOfDominanceParts{
     private static Item registerPart(String name, RegistryEntry<StatusEffect> statusEffect, int amplifier){
         return Registry.register(Registries.ITEM, Identifier.of(Renew.MOD_ID,name),new Item(new Item.Settings().maxCount(1).fireproof().rarity(Rarity.EPIC).registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Renew.MOD_ID, name)))){
             @Override
-            public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
+            public void inventoryTick(ItemStack stack, ServerWorld world, Entity entity, @Nullable EquipmentSlot slot) {
                 if(entity instanceof PlayerEntity player)
                 {
                     player.addStatusEffect(new StatusEffectInstance(statusEffect,200,amplifier));
                 }
-                super.inventoryTick(stack, world, entity, slot, false);
+                super.inventoryTick(stack, world, entity, slot);
             }
 
             @Override
-            public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-                tooltip.add(Text.translatable("tooltip.renew.orb_of_dominance_part"));
-                super.appendTooltip(stack, context, tooltip, type);
+            public void appendTooltip(ItemStack stack, TooltipContext context, TooltipDisplayComponent displayComponent, Consumer<Text> textConsumer, TooltipType type) {
+                textConsumer.accept(Text.translatable("tooltip.renew.orb_of_dominance_part"));
+                super.appendTooltip(stack, context, displayComponent, textConsumer, type);
             }
 
         });

@@ -20,7 +20,7 @@ public class OrbOfDominanceTools {
             return ActionResult.SUCCESS;
         }
     });
-    public static final Item ORB_OF_DOMINANCE_PICKAXE = ModItems.registerItem("orb_of_dominance_pickaxe",settings -> new PickaxeItem(ModToolMaterials.ORB_OF_DOMINANCE, 1.5f, -2.8f, settings.fireproof()) {
+    public static final Item ORB_OF_DOMINANCE_PICKAXE = ModItems.registerItem("orb_of_dominance_pickaxe",settings -> new Item( settings.pickaxe(ModToolMaterials.ORB_OF_DOMINANCE, 1.5f, -2.8f).fireproof()) {
         @Override
         public ActionResult use(World world, PlayerEntity user, Hand hand) {
             if (!world.isClient) {

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:netherite_cutlass_smithing"
+        "recipe": "renew:netherite_cutlass_smithing"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:netherite_cutlass_smithing"
+      "renew:netherite_cutlass_smithing"
     ]
   }
 }

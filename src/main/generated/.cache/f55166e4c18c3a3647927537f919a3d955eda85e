@@ -1,4 +1,4 @@
-// 1.21.4	-999999999-01-01T00:00:00	Renew/Renew mod recipes
+// 1.21.5	-999999999-01-01T00:00:00	Renew/Renew mod recipes
 76b5f0910ef483cbc40a1dee56489762001ef6de data/renew/advancement/recipes/combat/dancer_sword.json
 3ec288f0d55c66ffb25a3990d5b4a07f68813b18 data/renew/advancement/recipes/combat/diamond_cutlass.json
 968421e5416c16c3de1a02f19629e1cf3f554a27 data/renew/advancement/recipes/combat/diamond_scythe.json
@@ -6,7 +6,7 @@ fe7512783b20422eaf7a3190b7fdcb6974fa9eef data/renew/advancement/recipes/combat/g
 5637daf4225ecceeb8d6d0e7dcafee2a37c73a63 data/renew/advancement/recipes/combat/golden_scythe.json
 021252c7d793ecbcfae5041c1ac6b3e9cc48d7af data/renew/advancement/recipes/combat/iron_cutlass.json
 c757df2ef4b164859c1e95a55ab02d387d9640aa data/renew/advancement/recipes/combat/iron_scythe.json
-66bc7338a72146050092ef24b1ea50a87e985166 data/renew/advancement/recipes/combat/netherite_cutlass_smithing.json
+b9fa21224ca46b50c8fb725fd3609eb1223f6bca data/renew/advancement/recipes/combat/netherite_cutlass_smithing.json
 c758262954610f6ef96ac42a46dbe71aba21ac45 data/renew/advancement/recipes/combat/orb_of_dominance_boots.json
 36a90d8f1b639efa21831e3756157d4ca63e5782 data/renew/advancement/recipes/combat/orb_of_dominance_chestplate.json
 9ab9fabfedc90573b63ce1f66bb7c69a398590be data/renew/advancement/recipes/combat/orb_of_dominance_cutlass.json
@@ -36,7 +36,7 @@ c446668199facd04f0e469674ab7ecfb5d3c12af data/renew/recipe/cosmetic_dice.json
 f8bbcac0cc9344912ce3dbfcbb93e0b7a3af70f9 data/renew/recipe/golden_scythe.json
 12486e9707e7de683b7b8783d0403e27dff85887 data/renew/recipe/iron_cutlass.json
 e4caa0527e751d7387932b80ac0f4a89cb6fc193 data/renew/recipe/iron_scythe.json
-a46dafad063c99e9063f59a9880981d83dc0b5f1 data/renew/recipe/netherite_cutlass_smithing.json
+4c18004c4facb80cb880a3257ca80b0c5aa300c0 data/renew/recipe/netherite_cutlass_smithing.json
 ad8fa201a7df868d12087a2a391a35a836b3812d data/renew/recipe/orb_of_dominance_axe.json
 1a751cfd6283fdde73792e6481434bb5a5966a6d data/renew/recipe/orb_of_dominance_boots.json
 2e439dcf7dd789538bd58da6aad28a042f791fb1 data/renew/recipe/orb_of_dominance_chestplate.json

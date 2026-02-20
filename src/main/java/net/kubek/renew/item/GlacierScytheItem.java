@@ -21,7 +21,7 @@ public class GlacierScytheItem extends EnchanterScytheItem{
     }
 
     @Override
-    public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+    public void postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         World world = attacker.getWorld();
         ServerWorld serverWorld = Objects.requireNonNull(world.getServer()).getWorld(world.getRegistryKey());
         if(attacker instanceof PlayerEntity entity) {
@@ -38,7 +38,7 @@ public class GlacierScytheItem extends EnchanterScytheItem{
 
             }
         }
-        return super.postHit(stack, target, attacker);
+        super.postHit(stack, target, attacker);
 
     }
 }

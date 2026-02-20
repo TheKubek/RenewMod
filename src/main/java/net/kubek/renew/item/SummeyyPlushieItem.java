@@ -1,5 +1,6 @@
 package net.kubek.renew.item;
 
+import net.minecraft.component.type.TooltipDisplayComponent;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
@@ -14,6 +15,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 
 import java.util.List;
+import java.util.function.Consumer;
 
 public class SummeyyPlushieItem extends PlushieItem {
     public SummeyyPlushieItem(Settings settings) {
@@ -34,14 +36,14 @@ public class SummeyyPlushieItem extends PlushieItem {
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-        tooltip.add(Text.literal("Wszystkiego najlepszego Summeyy"));
-        tooltip.add(Text.literal("24.12.2025 01:24 - §oTheKubek"));
-        tooltip.add(Text.literal(""));
-        tooltip.add(Text.literal(""));
-        tooltip.add(Text.literal("--§5DEV ITEM§r--"));
+    public void appendTooltip(ItemStack stack, TooltipContext context, TooltipDisplayComponent displayComponent, Consumer<Text> textConsumer, TooltipType type) {
+        textConsumer.accept(Text.literal("Wszystkiego najlepszego Summeyy"));
+        textConsumer.accept(Text.literal("24.12.2025 01:24 - §oTheKubek"));
+        textConsumer.accept(Text.literal(""));
+        textConsumer.accept(Text.literal(""));
+        textConsumer.accept(Text.literal("--§5DEV ITEM§r--"));
 
 
-        super.appendTooltip(stack, context, tooltip, type);
+        super.appendTooltip(stack, context, displayComponent, textConsumer, type);
     }
 }

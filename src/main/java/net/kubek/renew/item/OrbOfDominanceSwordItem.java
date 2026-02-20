@@ -1,25 +1,27 @@
 package net.kubek.renew.item;
 
 import net.kubek.renew.components.ModDataComponentTypes;
+import net.minecraft.component.type.TooltipDisplayComponent;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.item.tooltip.TooltipType;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.text.Text;
 
 import java.util.List;
+import java.util.function.Consumer;
 
-public class OrbOfDominanceSwordItem extends SwordItem {
+public class OrbOfDominanceSwordItem extends Item {
 
-    public OrbOfDominanceSwordItem(ToolMaterial material, float attackDamage, float attackSpeed, Settings settings) {
-        super(material, attackDamage, attackSpeed, settings);
+    public OrbOfDominanceSwordItem(ToolMaterial material, float attackDamage, float attackSpeed, Item.Settings settings) {
+        super(settings.tool(material, BlockTags.SWORD_EFFICIENT,attackDamage,attackSpeed,1f));
     }
+
 
     @Override
     public float getBonusAttackDamage(Entity target, float baseAttackDamage, DamageSource damageSource) {
@@ -37,7 +39,7 @@ public class OrbOfDominanceSwordItem extends SwordItem {
     }
 
     @Override
-    public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+    public void postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         if(target.isBaby()){
             if(stack.get(ModDataComponentTypes.AdditionalDamage)==null) {
                 stack.set(ModDataComponentTypes.AdditionalDamage,0.2f);
@@ -50,16 +52,16 @@ public class OrbOfDominanceSwordItem extends SwordItem {
             }
         }
 
-        return super.postHit(stack, target, attacker);
+       super.postHit(stack, target, attacker);
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-        tooltip.add(Text.translatable("tooltip.renew.orb_of_dominance_sword_line_one"));
+    public void appendTooltip(ItemStack stack, TooltipContext context, TooltipDisplayComponent displayComponent, Consumer<Text> textConsumer, TooltipType type) {
+        textConsumer.accept(Text.translatable("tooltip.renew.orb_of_dominance_sword_line_one"));
         if(stack.get(ModDataComponentTypes.AdditionalDamage)!=null) {
-            tooltip.add(Text.literal("Damage: " + (stack.get(ModDataComponentTypes.AdditionalDamage).floatValue()-(stack.get(ModDataComponentTypes.AdditionalDamage).floatValue()%0.2f))));
+            textConsumer.accept(Text.literal("Damage: " + (stack.get(ModDataComponentTypes.AdditionalDamage).floatValue()-(stack.get(ModDataComponentTypes.AdditionalDamage).floatValue()%0.2f))));
         }
-        super.appendTooltip(stack, context, tooltip, type);
+        super.appendTooltip(stack, context, displayComponent, textConsumer, type);
     }
 }
 

@@ -6,6 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.component.type.TooltipDisplayComponent;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
@@ -31,6 +32,7 @@ import net.minecraft.world.World;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 public class StaffOfDominanceItem extends Item {
     public StaffOfDominanceItem(Settings settings) {
@@ -128,14 +130,14 @@ private static final Map<Block,Block> TRANSFORMABLE_BLOCKS_THREE = Map.of
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-        if(!Screen.hasShiftDown())tooltip.add(Text.translatable("tooltip.renew.staff_of_dominance"));
+    public void appendTooltip(ItemStack stack, TooltipContext context, TooltipDisplayComponent displayComponent, Consumer<Text> textConsumer, TooltipType type) {
+        if(!Screen.hasShiftDown())textConsumer.accept(Text.translatable("tooltip.renew.staff_of_dominance"));
         else {
-            tooltip.add(Text.translatable("tooltip.renew.staff_of_dominance_shift_line_one"));
-            tooltip.add(Text.translatable("tooltip.renew.staff_of_dominance_shift_line_two"));
-            tooltip.add(Text.translatable("tooltip.renew.staff_of_dominance_shift_line_three"));
+            textConsumer.accept(Text.translatable("tooltip.renew.staff_of_dominance_shift_line_one"));
+            textConsumer.accept(Text.translatable("tooltip.renew.staff_of_dominance_shift_line_two"));
+            textConsumer.accept(Text.translatable("tooltip.renew.staff_of_dominance_shift_line_three"));
         }
-        super.appendTooltip(stack, context, tooltip, type);
+        super.appendTooltip(stack, context, displayComponent, textConsumer, type);
     }
 
 

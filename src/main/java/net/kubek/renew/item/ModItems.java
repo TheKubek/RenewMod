@@ -8,14 +8,18 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
+import net.minecraft.item.equipment.ArmorMaterial;
 import net.minecraft.item.equipment.EquipmentType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Function;
 
@@ -34,12 +38,12 @@ public class ModItems {
     public static final Item RED_PANDA_PLUSHIE = registerItem("red_panda_plushie",settings -> new PlushieItem(settings.maxCount(1).rarity(Rarity.UNCOMMON)));
     public static final Item SUMMEYY_PLUSHIE = registerItem("summeyy_plushie",settings -> new SummeyyPlushieItem(settings.maxCount(1).rarity(Rarity.EPIC)));
 
-    public static final Item WOODEN_CUTLASS = registerItem("wooden_cutlass",settings -> new SwordItem(ToolMaterial.WOOD,1,-1.8f,settings));
-    public static final Item STONE_CUTLASS = registerItem("stone_cutlass",settings -> new SwordItem(ToolMaterial.STONE,1,-1.7f,settings));
-    public static final Item IRON_CUTLASS = registerItem("iron_cutlass",settings -> new SwordItem(ToolMaterial.IRON,1,-1.6f,settings));
-    public static final Item GOLDEN_CUTLASS = registerItem("golden_cutlass",settings -> new  SwordItem(ToolMaterial.GOLD,1,-1f,settings));
-    public static final Item DIAMOND_CUTLASS = registerItem("diamond_cutlass",settings -> new SwordItem(ToolMaterial.DIAMOND,1,-1.4f,settings));
-    public static final Item NETHERITE_CUTLASS = registerItem("netherite_cutlass",settings -> new SwordItem(ToolMaterial.NETHERITE,1,-1.3f,settings.fireproof()));
+    public static final Item WOODEN_CUTLASS = registerItem("wooden_cutlass",settings -> new Item(settings.sword(ToolMaterial.WOOD,1,-1.8f)));
+    public static final Item STONE_CUTLASS = registerItem("stone_cutlass",settings -> new Item(settings.sword(ToolMaterial.STONE,1,-1.7f)));
+    public static final Item IRON_CUTLASS = registerItem("iron_cutlass",settings -> new Item(settings.sword(ToolMaterial.IRON,1,-1.6f)));
+    public static final Item GOLDEN_CUTLASS = registerItem("golden_cutlass",settings -> new  Item(settings.sword(ToolMaterial.GOLD,1,-1f)));
+    public static final Item DIAMOND_CUTLASS = registerItem("diamond_cutlass",settings -> new Item(settings.sword(ToolMaterial.DIAMOND,1,-1.4f)));
+    public static final Item NETHERITE_CUTLASS = registerItem("netherite_cutlass",settings -> new Item(settings.sword(ToolMaterial.NETHERITE,1,-1.3f).fireproof()));
     public static final Item DANCER_SWORD = registerItem("dancer_sword",settings -> new DancerSwordItem(ToolMaterial.DIAMOND,2,-1.4f,settings.rarity(Rarity.RARE)));
 
     public static final Item WOODEN_SCYTHE = registerItem("wooden_scythe",settings ->new ScytheItem(ToolMaterial.WOOD,1f,-3f,settings));
@@ -53,50 +57,48 @@ public class ModItems {
 
     public static final Item COSMETIC_DICE = registerItem("cosmetic_dice",settings -> new CosmeticDice(settings.maxCount(8).rarity(Rarity.UNCOMMON)));
 
-    public static final Item ORB_OF_DOMINANCE_HELMET = registerItem("orb_of_dominance_helmet",settings -> new ArmorItem(ModArmorMaterials.ORB_OF_DOMINANCE_ARMOR_MATERIAL
-            , EquipmentType.HELMET
-            ,settings.fireproof().maxDamage(EquipmentType.HELMET.getMaxDamage(400))){
+    public static final Item ORB_OF_DOMINANCE_HELMET = registerItem("orb_of_dominance_helmet",settings -> new Item(
+            settings.fireproof().armor(ModArmorMaterials.ORB_OF_DOMINANCE_ARMOR_MATERIAL,EquipmentType.HELMET).maxDamage(EquipmentType.HELMET.getMaxDamage(400))){
         @Override
-        public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
+        public void inventoryTick(ItemStack stack, ServerWorld world, Entity entity, @Nullable EquipmentSlot slot) {
             if(!world.isClient && entity instanceof PlayerEntity player&&player.getEquippedStack(EquipmentSlot.HEAD).getItem()==ORB_OF_DOMINANCE_HELMET){
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH,100,0));
             }
-            super.inventoryTick(stack, world, entity, slot, selected);
+            super.inventoryTick(stack, world, entity, EquipmentSlot.HEAD);
         }
+
     });
-public static final Item ORB_OF_DOMINANCE_CHESTPLATE = registerItem("orb_of_dominance_chestplate",settings -> new ArmorItem(ModArmorMaterials.ORB_OF_DOMINANCE_ARMOR_MATERIAL
-            ,EquipmentType.CHESTPLATE
-            ,settings.fireproof().maxDamage(EquipmentType.CHESTPLATE.getMaxDamage(400))){
+public static final Item ORB_OF_DOMINANCE_CHESTPLATE = registerItem("orb_of_dominance_chestplate",settings -> new Item(
+        settings.fireproof().armor(ModArmorMaterials.ORB_OF_DOMINANCE_ARMOR_MATERIAL,EquipmentType.CHESTPLATE).maxDamage(EquipmentType.CHESTPLATE.getMaxDamage(400))){
+
     @Override
-    public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
+    public void inventoryTick(ItemStack stack, ServerWorld world, Entity entity, @Nullable EquipmentSlot slot) {
         if(!world.isClient && entity instanceof PlayerEntity player&&player.getEquippedStack(EquipmentSlot.CHEST).getItem()==ORB_OF_DOMINANCE_CHESTPLATE){
             player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE,100,0));
         }
-        super.inventoryTick(stack, world, entity, EquipmentSlot.CHEST.getEntitySlotId(), true);
+        super.inventoryTick(stack, world, entity, EquipmentSlot.CHEST);
     }
 });
-public static final Item ORB_OF_DOMINANCE_LEGGINGS = registerItem("orb_of_dominance_leggings",settings -> new ArmorItem(ModArmorMaterials.ORB_OF_DOMINANCE_ARMOR_MATERIAL
-            ,EquipmentType.LEGGINGS
-            ,settings.fireproof().maxDamage(EquipmentType.LEGGINGS.getMaxDamage(400))){
+public static final Item ORB_OF_DOMINANCE_LEGGINGS = registerItem("orb_of_dominance_leggings",settings -> new Item(
+        settings.fireproof().armor(ModArmorMaterials.ORB_OF_DOMINANCE_ARMOR_MATERIAL,EquipmentType.LEGGINGS).maxDamage(EquipmentType.LEGGINGS.getMaxDamage(400))){
 
     @Override
-    public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
+    public void inventoryTick(ItemStack stack, ServerWorld world, Entity entity, @Nullable EquipmentSlot slot) {
         if(!world.isClient && entity instanceof PlayerEntity player&&player.getEquippedStack(EquipmentSlot.LEGS).getItem()==ORB_OF_DOMINANCE_LEGGINGS){
             player.addStatusEffect(new StatusEffectInstance(StatusEffects.HEALTH_BOOST,100,0));
         }
-        super.inventoryTick(stack, world, entity, EquipmentSlot.LEGS.getEntitySlotId(), true);
+        super.inventoryTick(stack, world, entity, EquipmentSlot.LEGS);
     }
 });
-public static final Item ORB_OF_DOMINANCE_BOOTS = registerItem("orb_of_dominance_boots",settings -> new ArmorItem(ModArmorMaterials.ORB_OF_DOMINANCE_ARMOR_MATERIAL
-            ,EquipmentType.BOOTS
-            ,settings.fireproof().maxDamage(EquipmentType.BOOTS.getMaxDamage(400))){
+public static final Item ORB_OF_DOMINANCE_BOOTS = registerItem("orb_of_dominance_boots",settings -> new Item(
+        settings.fireproof().armor(ModArmorMaterials.ORB_OF_DOMINANCE_ARMOR_MATERIAL,EquipmentType.BOOTS).maxDamage(EquipmentType.BOOTS.getMaxDamage(400))){
 
     @Override
-    public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
+    public void inventoryTick(ItemStack stack, ServerWorld world, Entity entity, @Nullable EquipmentSlot slot) {
         if(!world.isClient && entity instanceof PlayerEntity player&&player.getEquippedStack(EquipmentSlot.FEET).getItem()==ORB_OF_DOMINANCE_BOOTS){
             player.addStatusEffect(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE,100,0));
         }
-        super.inventoryTick(stack, world, entity, EquipmentSlot.FEET.getEntitySlotId(), true);
+        super.inventoryTick(stack, world, entity, EquipmentSlot.FEET);
     }
 });
 
