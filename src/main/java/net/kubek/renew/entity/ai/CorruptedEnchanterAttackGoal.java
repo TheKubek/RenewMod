@@ -72,35 +72,35 @@ public class CorruptedEnchanterAttackGoal extends MeleeAttackGoal {
 
     protected void performAttack(LivingEntity pEnemy) {
         if(this.entity.distanceTo(pEnemy)<=6f){
-            this.mob.tryAttack(pEnemy.getWorld().getServer().getWorld(pEnemy.getWorld().getRegistryKey()),pEnemy);
+            this.mob.tryAttack(pEnemy.getEntityWorld().getServer().getWorld(pEnemy.getEntityWorld().getRegistryKey()),pEnemy);
             attackDelay = 20;
         }
         else{
             int chance = (random.nextInt(10) + 1);
             if(chance<=6){
-                EvokerFangsEntity evokerFangs = new EvokerFangsEntity(EntityType.EVOKER_FANGS,pEnemy.getWorld());
-                evokerFangs.setPosition(pEnemy.getPos());
-                pEnemy.getWorld().spawnEntity(evokerFangs);
+                EvokerFangsEntity evokerFangs = new EvokerFangsEntity(EntityType.EVOKER_FANGS,pEnemy.getEntityWorld());
+                evokerFangs.setPosition(pEnemy.getTrackedPosition().getPos());
+                pEnemy.getEntityWorld().spawnEntity(evokerFangs);
             }
             else if(chance<=8){
-                PillagerEntity entity1 = new PillagerEntity(EntityType.PILLAGER,pEnemy.getWorld());
+                PillagerEntity entity1 = new PillagerEntity(EntityType.PILLAGER,pEnemy.getEntityWorld());
                 entity1.setPosition(pEnemy.getX()-5,pEnemy.getY(),pEnemy.getZ());
                 entity1.setStackInHand(Hand.MAIN_HAND,new ItemStack(Items.CROSSBOW));
-                pEnemy.getWorld().spawnEntity(entity1);
-                PillagerEntity entity2 = new PillagerEntity(EntityType.PILLAGER,pEnemy.getWorld());
+                pEnemy.getEntityWorld().spawnEntity(entity1);
+                PillagerEntity entity2 = new PillagerEntity(EntityType.PILLAGER,pEnemy.getEntityWorld());
                 entity2.setPosition(pEnemy.getX()+5,pEnemy.getY(),pEnemy.getZ());
                 entity2.setStackInHand(Hand.MAIN_HAND,new ItemStack(Items.CROSSBOW));
-                pEnemy.getWorld().spawnEntity(entity2);
+                pEnemy.getEntityWorld().spawnEntity(entity2);
             }
             else{
-                VindicatorEntity entity1 = new VindicatorEntity(EntityType.VINDICATOR,pEnemy.getWorld());
+                VindicatorEntity entity1 = new VindicatorEntity(EntityType.VINDICATOR,pEnemy.getEntityWorld());
                 entity1.setPosition(pEnemy.getX()-5,pEnemy.getY(),pEnemy.getZ());
                 entity1.setStackInHand(Hand.MAIN_HAND,new ItemStack(Items.DIAMOND_AXE));
-                pEnemy.getWorld().spawnEntity(entity1);
-                VindicatorEntity entity2 = new VindicatorEntity(EntityType.VINDICATOR,pEnemy.getWorld());
+                pEnemy.getEntityWorld().spawnEntity(entity1);
+                VindicatorEntity entity2 = new VindicatorEntity(EntityType.VINDICATOR,pEnemy.getEntityWorld());
                 entity2.setPosition(pEnemy.getX()+5,pEnemy.getY(),pEnemy.getZ());
                 entity2.setStackInHand(Hand.MAIN_HAND,new ItemStack(Items.DIAMOND_AXE));
-                pEnemy.getWorld().spawnEntity(entity2);
+                pEnemy.getEntityWorld().spawnEntity(entity2);
             }
 
             attackDelay = 30;

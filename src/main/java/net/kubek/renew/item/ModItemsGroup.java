@@ -47,7 +47,7 @@ public class ModItemsGroup {
                     entries.add(ModItems.TEDDY_BEAR_PLUSHIE);
                     entries.add(ModItems.MONKEY_PLUSHIE);
                     entries.add(ModItems.KOALA_PLUSHIE);
-                    //entries.add(ModItems.RED_PANDA_PLUSHIE);
+                    entries.add(ModItems.RED_PANDA_PLUSHIE);
                     entries.add(ModItems.COSMETIC_DICE);
 
 

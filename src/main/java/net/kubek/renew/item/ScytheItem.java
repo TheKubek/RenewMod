@@ -29,7 +29,7 @@ public class ScytheItem extends HoeItem {
 
             if (block instanceof CropBlock cropBlock) {
                 if (cropBlock.isMature(blockState)) {
-                    if(!world.isClient) {
+                    if(!world.isClient()) {
                         context.getStack().damage(1,((ServerWorld) world),((ServerPlayerEntity) context.getPlayer()),
                                 item -> context.getPlayer().sendEquipmentBreakStatus(item, EquipmentSlot.MAINHAND)
                         );

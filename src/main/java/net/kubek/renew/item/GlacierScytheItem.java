@@ -22,10 +22,10 @@ public class GlacierScytheItem extends EnchanterScytheItem{
 
     @Override
     public void postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        World world = attacker.getWorld();
+        World world = attacker.getEntityWorld();
         ServerWorld serverWorld = Objects.requireNonNull(world.getServer()).getWorld(world.getRegistryKey());
         if(attacker instanceof PlayerEntity entity) {
-            if (!world.isClient && entity.getItemCooldownManager().getCooldownProgress(this.getDefaultStack(), 0) == 0) {
+            if (!world.isClient() && entity.getItemCooldownManager().getCooldownProgress(this.getDefaultStack(), 0) == 0) {
                 DamageSource damageSource = new DamageSource(
                         world.getRegistryManager()
                                 .getOrThrow(RegistryKeys.DAMAGE_TYPE)

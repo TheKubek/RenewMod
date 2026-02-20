@@ -19,13 +19,6 @@ public class OrbOfDominanceRenderer extends EyesFeatureRenderer {
     }
 
     @Override
-    public void render(MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, EntityRenderState state, float limbAngle, float limbDistance) {
-        VertexConsumer vertexConsumer = vertexConsumers.getBuffer(this.getEyesTexture());
-        this.getContextModel().render(matrices, vertexConsumer, 0, 1, -1);
-    }
-
-
-    @Override
     public RenderLayer getEyesTexture() {
         return SKIN;
     }

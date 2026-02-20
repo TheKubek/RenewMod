@@ -1,4 +1,6 @@
-// 1.21.5	-999999999-01-01T00:00:00	Renew/Renew mod recipes
+// 1.21.10	-999999999-01-01T00:00:00	Renew/Renew mod recipes
+b5cc832cd6a0fd52e8a144ed5ecbe0768eb3585e data/renew/advancement/recipes/combat/copper_cutlass.json
+0209be00d83399b69e7141ae9f60da4365e75a3e data/renew/advancement/recipes/combat/copper_scythe.json
 76b5f0910ef483cbc40a1dee56489762001ef6de data/renew/advancement/recipes/combat/dancer_sword.json
 3ec288f0d55c66ffb25a3990d5b4a07f68813b18 data/renew/advancement/recipes/combat/diamond_cutlass.json
 968421e5416c16c3de1a02f19629e1cf3f554a27 data/renew/advancement/recipes/combat/diamond_scythe.json
@@ -26,6 +28,8 @@ e3210ec036f9af3bb459df69d53459b152df8814 data/renew/advancement/recipes/tools/or
 3023207fb7cc3fd9bc718dc52f58ecb9283933d2 data/renew/advancement/recipes/tools/orb_of_dominance_hoe.json
 4a6080ac07d059d35772cd63cb5f8db6b528a542 data/renew/advancement/recipes/tools/orb_of_dominance_pickaxe.json
 d3f31a0f3cecf478eda31e2220cc9a91f864a192 data/renew/advancement/recipes/tools/orb_of_dominance_shovel.json
+6ac6542e57f3c8462452601a8ff205728d42af23 data/renew/recipe/copper_cutlass.json
+0053bddec477bb7e4d04daf9bca307a6b6e22055 data/renew/recipe/copper_scythe.json
 c446668199facd04f0e469674ab7ecfb5d3c12af data/renew/recipe/cosmetic_dice.json
 608bc91b524d6c0e947440ced4c4d6ae2078f98e data/renew/recipe/dancer_sword.json
 71a585ec924fd35f138550df86a9cc3d73611588 data/renew/recipe/diamond_cutlass.json

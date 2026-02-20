@@ -22,12 +22,14 @@ public class ModModelProvider extends FabricModelProvider {
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
     itemModelGenerator.register(ModItems.WOODEN_CUTLASS, Models.HANDHELD);
     itemModelGenerator.register(ModItems.STONE_CUTLASS, Models.HANDHELD);
+    itemModelGenerator.register(ModItems.COPPER_CUTLASS, Models.HANDHELD);
     itemModelGenerator.register(ModItems.IRON_CUTLASS, Models.HANDHELD);
     itemModelGenerator.register(ModItems.GOLDEN_CUTLASS, Models.HANDHELD);
     itemModelGenerator.register(ModItems.DIAMOND_CUTLASS, Models.HANDHELD);
     itemModelGenerator.register(ModItems.NETHERITE_CUTLASS, Models.HANDHELD);
     itemModelGenerator.register(ModItems.WOODEN_SCYTHE, Models.HANDHELD);
     itemModelGenerator.register(ModItems.STONE_SCYTHE, Models.HANDHELD);
+    itemModelGenerator.register(ModItems.COPPER_SCYTHE, Models.HANDHELD);
     itemModelGenerator.register(ModItems.IRON_SCYTHE, Models.HANDHELD);
     itemModelGenerator.register(ModItems.GOLDEN_SCYTHE, Models.HANDHELD);
     itemModelGenerator.register(ModItems.DIAMOND_SCYTHE, Models.HANDHELD);

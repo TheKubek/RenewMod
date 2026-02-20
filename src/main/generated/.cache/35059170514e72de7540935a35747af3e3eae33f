@@ -1,4 +1,6 @@
-// 1.21.5	-999999999-01-01T00:00:00	Renew/Model Definitions
+// 1.21.10	-999999999-01-01T00:00:00	Renew/Model Definitions
+baa9a70b5574b0b33c3941240ae66b98c26ac0cf assets/renew/items/copper_cutlass.json
+2be4e9fc45cdcb75fc6d554569fb2c10b4a0500f assets/renew/items/copper_scythe.json
 c0ec7af22986be0e716c8bc3db16a7066a9089d2 assets/renew/items/diamond_cutlass.json
 0139b70e740674cf1ad3335820e4059bffaad618 assets/renew/items/diamond_scythe.json
 3717f553a96f56c8686322eb36bc686508594123 assets/renew/items/enchanter_scythe.json
@@ -17,6 +19,8 @@ a4c448d140977e311641a47c691b3e0ef0d91fa6 assets/renew/items/orb_of_dominance_hel
 ab354f2e5db6339be2ebb074cc93830da1182ee1 assets/renew/items/stone_scythe.json
 f2465273f9e24c0b0c4902c5ec0378abe4610b3d assets/renew/items/wooden_cutlass.json
 4f3892b07ff35b056764b555a0a401f30ba4501a assets/renew/items/wooden_scythe.json
+2a43f1e275afe76bfb813bfad2cc0171f0641f07 assets/renew/models/item/copper_cutlass.json
+7aeaed10ea661428e43c2e7b41a53964fceded6d assets/renew/models/item/copper_scythe.json
 6986ede8ab53b974d0c240fff2c07dbd3b5a1288 assets/renew/models/item/diamond_cutlass.json
 64c0cf8e03da58403a05a8abc495752713e2488e assets/renew/models/item/diamond_scythe.json
 6793d67e8ab14d9ba438784b139d2daf507e68e3 assets/renew/models/item/enchanter_scythe.json

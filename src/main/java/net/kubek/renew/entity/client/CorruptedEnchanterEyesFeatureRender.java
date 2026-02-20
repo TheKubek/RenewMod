@@ -2,23 +2,17 @@ package net.kubek.renew.entity.client;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.kubek.renew.Renew;
-import net.minecraft.client.render.OverlayTexture;
 import net.minecraft.client.render.RenderLayer;
-import net.minecraft.client.render.VertexConsumer;
-import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.feature.EyesFeatureRenderer;
 import net.minecraft.client.render.entity.feature.FeatureRendererContext;
-import net.minecraft.client.render.entity.state.EntityRenderState;
-import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.entity.Entity;
 import net.minecraft.util.Identifier;
 
 @Environment(EnvType.CLIENT)
-public class CorruptedEnchanterEyesFeatureRender extends EyesFeatureRenderer {
+public class CorruptedEnchanterEyesFeatureRender extends EyesFeatureRenderer<CorruptedEnchanterRenderState, CorruptedEnchanterModel> {
     private static final RenderLayer SKIN = RenderLayer.getEyes(Identifier.of(Renew.MOD_ID,"textures/entity/corrupted_enchanter_eyes.png"));
 
 
-    public CorruptedEnchanterEyesFeatureRender(FeatureRendererContext context) {
+    public CorruptedEnchanterEyesFeatureRender(FeatureRendererContext<CorruptedEnchanterRenderState, CorruptedEnchanterModel> context) {
         super(context);
     }
 
@@ -28,11 +22,6 @@ public class CorruptedEnchanterEyesFeatureRender extends EyesFeatureRenderer {
         return SKIN;
     }
 
-    @Override
-    public void render(MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, EntityRenderState state, float limbAngle, float limbDistance) {
-        VertexConsumer vertexConsumer = vertexConsumers.getBuffer(this.getEyesTexture());
-        this.getContextModel().render(matrices, vertexConsumer, 0, 1, -1);
-    }
 
 
 }

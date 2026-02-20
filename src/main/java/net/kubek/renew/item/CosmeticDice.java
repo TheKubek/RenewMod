@@ -20,7 +20,7 @@ public class CosmeticDice extends Item {
 
     @Override
     public ActionResult use(World world, PlayerEntity user, Hand hand) {
-        if(!world.isClient) {
+        if(!world.isClient()) {
             ItemEntity item = null;
             int chance = (int) (random.nextInt(100) + 1);
             user.getStackInHand(hand).decrement(1);

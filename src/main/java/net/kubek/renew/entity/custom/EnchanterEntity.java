@@ -118,7 +118,7 @@ public class EnchanterEntity extends IllagerEntity {
     @Override
     public void tick() {
         super.tick();
-        if(this.getWorld().isClient){
+        if(this.getEntityWorld().isClient()){
             this.setupAnimationsStates();
         }
     }
@@ -214,9 +214,10 @@ public class EnchanterEntity extends IllagerEntity {
     @Override
     public void onDeath(DamageSource damageSource) {
         assert damageSource.getAttacker() != null;
-        World world = damageSource.getAttacker().getWorld();
+        World world = damageSource.getAttacker().getEntityWorld().getServer().getWorld(getEntityWorld().getRegistryKey());
         CorruptedEnchanterEntity corruptedEnchanterEntity = new CorruptedEnchanterEntity(ModEntities.CORRUPTED_ENCHANTER, world);
-        corruptedEnchanterEntity.setPosition(this.getPos());
+        corruptedEnchanterEntity.setPosition(this.getEntityPos());
         world.spawnEntity(corruptedEnchanterEntity);
+
     }
 }

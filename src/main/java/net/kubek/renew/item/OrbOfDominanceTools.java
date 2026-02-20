@@ -14,7 +14,7 @@ public class OrbOfDominanceTools {
     public static final Item ORB_OF_DOMINANCE_AXE = ModItems.registerItem("orb_of_dominance_axe",settings -> new AxeItem(ModToolMaterials.ORB_OF_DOMINANCE, 6, -3.2f, settings.fireproof()) {
         @Override
         public ActionResult use(World world, PlayerEntity user, Hand hand) {
-            if (!world.isClient) {
+            if (!world.isClient()) {
                 user.addStatusEffect(new StatusEffectInstance(StatusEffects.SATURATION, 100, 0));
             }
             return ActionResult.SUCCESS;
@@ -23,7 +23,7 @@ public class OrbOfDominanceTools {
     public static final Item ORB_OF_DOMINANCE_PICKAXE = ModItems.registerItem("orb_of_dominance_pickaxe",settings -> new Item( settings.pickaxe(ModToolMaterials.ORB_OF_DOMINANCE, 1.5f, -2.8f).fireproof()) {
         @Override
         public ActionResult use(World world, PlayerEntity user, Hand hand) {
-            if (!world.isClient) {
+            if (!world.isClient()) {
                 user.addStatusEffect(new StatusEffectInstance(StatusEffects.HASTE, 100, 0));
             }
             return ActionResult.SUCCESS;
@@ -32,7 +32,7 @@ public class OrbOfDominanceTools {
     public static final Item ORB_OF_DOMINANCE_SHOVEL = ModItems.registerItem("orb_of_dominance_shovel",settings -> new ShovelItem(ModToolMaterials.ORB_OF_DOMINANCE, 3, -3f, settings.fireproof()) {
         @Override
         public ActionResult use(World world, PlayerEntity user, Hand hand) {
-            if (!world.isClient) {
+            if (!world.isClient()) {
                 user.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 100, 0));
             }
             return ActionResult.SUCCESS;
@@ -41,7 +41,7 @@ public class OrbOfDominanceTools {
     public static final Item ORB_OF_DOMINANCE_HOE = ModItems.registerItem("orb_of_dominance_hoe",settings -> new HoeItem(ModToolMaterials.ORB_OF_DOMINANCE, 0, -3f, settings.fireproof()) {
         @Override
         public ActionResult use(World world, PlayerEntity user, Hand hand) {
-            if (!world.isClient) {
+            if (!world.isClient()) {
                 user.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 100, 0));
             }
             return ActionResult.SUCCESS;

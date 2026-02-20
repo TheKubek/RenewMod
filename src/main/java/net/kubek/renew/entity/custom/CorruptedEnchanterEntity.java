@@ -114,7 +114,7 @@ public class CorruptedEnchanterEntity extends IllagerEntity {
     @Override
     public void tick() {
         super.tick();
-        if(this.getWorld().isClient){
+        if(this.getEntityWorld().isClient()){
             this.setupAnimationsStates();
         }
     }

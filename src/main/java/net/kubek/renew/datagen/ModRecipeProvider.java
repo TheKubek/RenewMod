@@ -68,6 +68,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                             .criterion(hasItem(Items.COBBLED_DEEPSLATE),conditionsFromItem(Items.COBBLED_DEEPSLATE))
                             .criterion(hasItem(Items.BASALT),conditionsFromItem(Items.BASALT))
                             .offerTo(recipeExporter);
+                    registerCutlassCrafting(Items.COPPER_INGOT,ModItems.COPPER_CUTLASS,recipeExporter);
                     registerCutlassCrafting(Items.IRON_INGOT,ModItems.IRON_CUTLASS,recipeExporter);
                     registerCutlassCrafting(Items.GOLD_INGOT,ModItems.GOLDEN_CUTLASS,recipeExporter);
                     registerCutlassCrafting(Items.DIAMOND,ModItems.DIAMOND_CUTLASS,recipeExporter);
@@ -99,6 +100,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                             .input('L',Items.LEATHER)
                             .criterion(hasItem(Items.LEATHER),conditionsFromItem(Items.LEATHER))
                             .offerTo(recipeExporter);
+                    registerScytheCrafting(Items.COPPER_INGOT,ModItems.COPPER_SCYTHE,recipeExporter);
                     registerScytheCrafting(Items.IRON_INGOT,ModItems.IRON_SCYTHE,recipeExporter);
                     registerScytheCrafting(Items.GOLD_INGOT,ModItems.GOLDEN_SCYTHE,recipeExporter);
                     registerScytheCrafting(Items.DIAMOND,ModItems.DIAMOND_SCYTHE,recipeExporter);

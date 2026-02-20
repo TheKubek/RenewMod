@@ -1,7 +1,6 @@
 package net.kubek.renew;
 
 import net.fabricmc.api.ModInitializer;
-
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.kubek.renew.components.ModDataComponentTypes;
 import net.kubek.renew.entity.ModEntities;
@@ -11,8 +10,6 @@ import net.kubek.renew.item.ModItems;
 import net.kubek.renew.item.ModItemsGroup;
 import net.kubek.renew.item.OrbOfDominanceParts;
 import net.kubek.renew.item.OrbOfDominanceTools;
-import net.minecraft.state.property.IntProperty;
-import net.minecraft.util.Rarity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

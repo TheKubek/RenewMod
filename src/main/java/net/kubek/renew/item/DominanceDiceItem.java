@@ -20,7 +20,7 @@ public class DominanceDiceItem extends Item {
     Random random = new Random();
     @Override
     public ActionResult.Success use(World world, PlayerEntity user, Hand hand) {
-        if(!world.isClient) {
+        if(!world.isClient()) {
             ItemEntity item = null;
             int chance = (int) (random.nextInt(9) + 1);
             user.getStackInHand(hand).decrement(1);

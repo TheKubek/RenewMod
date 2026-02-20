@@ -5,7 +5,9 @@ import net.kubek.renew.entity.custom.EnchanterEntity;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.input.KeyInput;
 import net.minecraft.component.type.TooltipDisplayComponent;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
@@ -82,7 +84,7 @@ private static final Map<Block,Block> TRANSFORMABLE_BLOCKS_THREE = Map.of
     public ActionResult useOnBlock(ItemUsageContext context) {
         BlockState blockState = context.getWorld().getBlockState(context.getBlockPos());
         World world = context.getWorld();
-        if(!world.isClient){
+        if(!world.isClient()){
             if(TRANSFORMABLE_BLOCKS.containsKey(blockState.getBlock())){
                 world.setBlockState(context.getBlockPos(),TRANSFORMABLE_BLOCKS.get(blockState.getBlock()).getDefaultState());
 
@@ -103,16 +105,17 @@ private static final Map<Block,Block> TRANSFORMABLE_BLOCKS_THREE = Map.of
 
         @Override
     public ActionResult useOnEntity(ItemStack stack, PlayerEntity user, LivingEntity entity, Hand hand) {
-            World world = entity.getWorld();
-            if(!world.isClient) {
+            World world = entity.getEntityWorld();
+            if(!world.isClient()) {
                 if (entity instanceof ZombieEntity) {
                     SkeletonEntity skeletonEntity = new SkeletonEntity(EntityType.SKELETON, world);
-                    skeletonEntity.setPosition(entity.getPos());
+                    skeletonEntity.setPosition(entity.getEntityPos());
                     skeletonEntity.equipStack(EquipmentSlot.MAINHAND, entity.getMainHandStack());
+
                     world.spawnEntity(skeletonEntity);
                 } else if (entity instanceof BatEntity) {
                     BeeEntity beeEntity = new BeeEntity(EntityType.BEE, world);
-                    beeEntity.setPosition(entity.getPos());
+                    beeEntity.setPosition(entity.getEntityPos());
                     world.spawnEntity(beeEntity);
                 } else if (entity instanceof WitherEntity) {
                     user.addStatusEffect(new StatusEffectInstance(StatusEffects.DARKNESS, 2000, 1));
@@ -131,7 +134,7 @@ private static final Map<Block,Block> TRANSFORMABLE_BLOCKS_THREE = Map.of
 
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, TooltipDisplayComponent displayComponent, Consumer<Text> textConsumer, TooltipType type) {
-        if(!Screen.hasShiftDown())textConsumer.accept(Text.translatable("tooltip.renew.staff_of_dominance"));
+        if (!MinecraftClient.getInstance().isShiftPressed())  textConsumer.accept(Text.translatable("tooltip.renew.staff_of_dominance"));
         else {
             textConsumer.accept(Text.translatable("tooltip.renew.staff_of_dominance_shift_line_one"));
             textConsumer.accept(Text.translatable("tooltip.renew.staff_of_dominance_shift_line_two"));
