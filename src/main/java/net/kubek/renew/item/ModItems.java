@@ -147,6 +147,7 @@ public static final Item ORB_OF_DOMINANCE_BOOTS = registerItem("orb_of_dominance
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(e ->{
             e.addAfter(Items.NETHERITE_SWORD,ORB_OF_DOMINANCE_SWORD);
             e.addAfter(ModItems.NETHERITE_CUTLASS,ORB_OF_DOMINANCE_CUTLASS);
+            e.addAfter(Items.NETHERITE_SPEAR, ORB_OF_DOMINANCE_SPEAR);
         });
     }
 

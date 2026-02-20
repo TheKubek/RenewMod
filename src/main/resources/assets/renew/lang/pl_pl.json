@@ -1,0 +1,76 @@
+{
+  "item.renew.staff_of_dominance": "Laska Dominacji",
+  "item.renew.orb_of_dominance": "Kula Dominacji",
+  "item.renew.dominance_dice": "Kostka Dominacji",
+
+
+  "item.renew.summeyy_plushie": "Pluszak Summeyy'a",
+  "item.renew.teddy_bear_plushie": "Pluszowy Miś",
+  "item.renew.monkey_plushie": "Pluszowa Małpka",
+  "item.renew.koala_plushie": "Pluszowy Koala",
+  "item.renew.red_panda_plushie": "Pluszowa Czerwona Panda",
+  "item.renew.cosmetic_dice": "Kostka Kosmetyczna",
+
+  "item.renew.wooden_cutlass": "Drewniany Kordelas",
+  "item.renew.stone_cutlass": "Kamienny Kordelas",
+  "item.renew.copper_cutlass": "Miedziany Kordelas",
+  "item.renew.iron_cutlass": "Żelazny Kordelas",
+  "item.renew.golden_cutlass": "Złoty Kordelas",
+  "item.renew.diamond_cutlass": "Diamentowy Kordelas",
+  "item.renew.netherite_cutlass": "Netherytowy Kordelas",
+  "item.renew.dancer_sword": "Miecz Tancerza",
+
+  "item.renew.wooden_scythe": "Drewniana Kosa",
+  "item.renew.stone_scythe": "Kamienna Kosa",
+  "item.renew.copper_scythe": "Miedziana Kosa",
+  "item.renew.iron_scythe": "Żelazna Kosa",
+  "item.renew.golden_scythe": "Złota Kosa",
+  "item.renew.diamond_scythe": "Diamentowa Kosa",
+  "item.renew.netherite_scythe": "Netherytowa Kosa",
+  "item.renew.enchanter_scythe": "Kosa Zaklinacza",
+  "item.renew.glacier_scythe": "Kosa Lodowca",
+
+  "item.renew.orb_of_dominance_part_one": "Pierwsza Część Kuli Dominacji",
+  "item.renew.orb_of_dominance_part_two": "Druga Część Kuli Dominacji",
+  "item.renew.orb_of_dominance_part_three": "Trzecia Część Kuli Dominacji",
+  "item.renew.orb_of_dominance_part_four": "Czwarta Część Kuli Dominacji",
+  "item.renew.orb_of_dominance_part_five": "Piąta Część Kuli Dominacji",
+  "item.renew.orb_of_dominance_part_six": "Szósta Część Kuli Dominacji",
+  "item.renew.orb_of_dominance_part_seven": "Siódma Część Kuli Dominacji",
+  "item.renew.orb_of_dominance_part_eight": "Ósma Część Kuli Dominacji",
+  "item.renew.orb_of_dominance_part_nine": "Dziewiąta Część Kuli Dominacji",
+
+  "item.renew.orb_of_dominance_sword": "Miecz Kuli Dominacji",
+  "item.renew.orb_of_dominance_pickaxe": "Kilof Kuli Dominacji",
+  "item.renew.orb_of_dominance_axe": "Siekiera Kuli Dominacji",
+  "item.renew.orb_of_dominance_shovel": "Łopata Kuli Dominacji",
+  "item.renew.orb_of_dominance_hoe": "Motyka Kuli Dominacji",
+  "item.renew.orb_of_dominance_cutlass": "Kordelas Kuli Dominacji",
+  "item.renew.orb_of_dominance_scythe": "Kosa Kuli Dominacji",
+  "item.renew.orb_of_dominance_spear": "Włócznia Kuli Dominacji",
+
+  "item.renew.orb_of_dominance_helmet": "Hełm Kuli Dominacji",
+  "item.renew.orb_of_dominance_chestplate": "Napierśnik Kuli Dominacji",
+  "item.renew.orb_of_dominance_leggings": "Napierśnik Kuli Dominacji",
+  "item.renew.orb_of_dominance_boots": "Buty Kuli Dominacji",
+
+
+
+  "itemgroup.orb_of_dominance": "Kula Dominacji",
+  "itemgroup.orb_of_dominance_parts": "Części Kuli Dominacji",
+  "itemgroup.plushies": "Pluszaki",
+
+  "tooltip.renew.orb_of_dominance": "Bardzo potężna kula, nikt nie wie co ona robi",
+  "tooltip.renew.staff_of_dominance": "Przytrzymaj §e§lSHIFT §raby uzyskać więcej informacji",
+  "tooltip.renew.staff_of_dominance_shift_line_one": "Z pomocą laski kula jest stabilna i używalna",
+  "tooltip.renew.staff_of_dominance_shift_line_two": "Użyta na bloku zmienia go. I użycie jej na żyjącym bycie zabija go",
+  "tooltip.renew.staff_of_dominance_shift_line_three": "Nie sugerowałbym używania na Witherze",
+  "tooltip.renew.orb_of_dominance_part": "Część Kuli Dominacji",
+  "tooltip.renew.orb_of_dominance_sword_line_one": "Krew dzieci wzmacnia ten miecz",
+
+  "entity.renew.enchanter": "Zaklinacz",
+  "entity.renew.corrupted_enchanter": "Skażony Zaklinacz"
+
+
+
+}

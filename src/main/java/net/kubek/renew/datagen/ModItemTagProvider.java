@@ -76,5 +76,6 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(OrbOfDominanceParts.ORB_OF_DOMINANCE_PART_SEVEN)
                 .add(OrbOfDominanceParts.ORB_OF_DOMINANCE_PART_EIGHT)
                 .add(OrbOfDominanceParts.ORB_OF_DOMINANCE_PART_NINE);
+
     }
 }
