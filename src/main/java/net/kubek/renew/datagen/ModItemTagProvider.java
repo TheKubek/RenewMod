@@ -23,7 +23,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
-        getOrCreateTagBuilder(ModTags.Items.CUTLASSES)
+        valueLookupBuilder(ModTags.Items.CUTLASSES)
                 .add(ModItems.WOODEN_CUTLASS)
                 .add(ModItems.STONE_CUTLASS)
                 .add(ModItems.IRON_CUTLASS)
@@ -32,9 +32,9 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.NETHERITE_CUTLASS)
                 .add(OrbOfDominanceTools.ORB_OF_DOMINANCE_CUTLASS)
                 .add(ModItems.DANCER_SWORD);
-        getOrCreateTagBuilder(ItemTags.SWORDS)
+        valueLookupBuilder(ItemTags.SWORDS)
                 .addTag(ModTags.Items.CUTLASSES);
-        getOrCreateTagBuilder(ModTags.Items.SCYTHES)
+        valueLookupBuilder(ModTags.Items.SCYTHES)
                 .add(ModItems.WOODEN_SCYTHE)
                 .add(ModItems.STONE_SCYTHE)
                 .add(ModItems.IRON_SCYTHE)
@@ -44,26 +44,26 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(OrbOfDominanceTools.ORB_OF_DOMINANCE_SCYTHE)
                 .add(ModItems.ENCHANTER_SCYTHE)
                 .add(ModItems.GLACIER_SCYTHE);
-        getOrCreateTagBuilder(ItemTags.HOES)
+        valueLookupBuilder(ItemTags.HOES)
                 .addTag(ModTags.Items.SCYTHES)
                 .add(OrbOfDominanceTools.ORB_OF_DOMINANCE_HOE);
-        getOrCreateTagBuilder(ItemTags.SWORDS)
+        valueLookupBuilder(ItemTags.SWORDS)
                 .add(OrbOfDominanceTools.ORB_OF_DOMINANCE_SWORD);
-        getOrCreateTagBuilder(ItemTags.AXES)
+        valueLookupBuilder(ItemTags.AXES)
                 .add(OrbOfDominanceTools.ORB_OF_DOMINANCE_AXE);
-        getOrCreateTagBuilder(ItemTags.PICKAXES)
+        valueLookupBuilder(ItemTags.PICKAXES)
                 .add(OrbOfDominanceTools.ORB_OF_DOMINANCE_PICKAXE);
-        getOrCreateTagBuilder(ItemTags.SHOVELS)
+        valueLookupBuilder(ItemTags.SHOVELS)
                 .add(OrbOfDominanceTools.ORB_OF_DOMINANCE_SHOVEL);
-        getOrCreateTagBuilder(ItemTags.HEAD_ARMOR)
+        valueLookupBuilder(ItemTags.HEAD_ARMOR)
                 .add(ModItems.ORB_OF_DOMINANCE_HELMET);
-        getOrCreateTagBuilder(ItemTags.CHEST_ARMOR)
+        valueLookupBuilder(ItemTags.CHEST_ARMOR)
                 .add(ModItems.ORB_OF_DOMINANCE_CHESTPLATE);
-        getOrCreateTagBuilder(ItemTags.LEG_ARMOR)
+        valueLookupBuilder(ItemTags.LEG_ARMOR)
                 .add(ModItems.ORB_OF_DOMINANCE_LEGGINGS);
-        getOrCreateTagBuilder(ItemTags.FOOT_ARMOR)
+        valueLookupBuilder(ItemTags.FOOT_ARMOR)
                 .add(ModItems.ORB_OF_DOMINANCE_BOOTS);
-        getOrCreateTagBuilder(ModTags.Items.ORB_OF_DOMINANCE)
+        valueLookupBuilder(ModTags.Items.ORB_OF_DOMINANCE)
                 .add(ModItems.ORB_OF_DOMINANCE)
                 .add(OrbOfDominanceParts.ORB_OF_DOMINANCE_PART_ONE)
                 .add(OrbOfDominanceParts.ORB_OF_DOMINANCE_PART_TWO)

@@ -1,12 +1,9 @@
 package net.kubek.renew.entity.client.animation;
 
-import net.minecraft.client.render.entity.animation.Animation;
-import net.minecraft.client.render.entity.animation.AnimationHelper;
-import net.minecraft.client.render.entity.animation.Keyframe;
-import net.minecraft.client.render.entity.animation.Transformation;
+import net.minecraft.client.render.entity.animation.*;
 
 public class EnchanterAnimations {
-    public static final Animation idle = Animation.Builder.create(2.0F)
+    public static final AnimationDefinition idle = AnimationDefinition.Builder.create(2.0F)
             .addBoneAnimation("right2", new Transformation(Transformation.Targets.ROTATE,
                     new Keyframe(0.0F, AnimationHelper.createRotationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.LINEAR),
                     new Keyframe(1.0F, AnimationHelper.createRotationalVector(-40.0F, 0.0F, 0.0F), Transformation.Interpolations.LINEAR),
@@ -40,7 +37,7 @@ public class EnchanterAnimations {
             ))
             .build();
 
-    public static final Animation walk = Animation.Builder.create(1.5F).looping()
+    public static final AnimationDefinition walk = AnimationDefinition.Builder.create(1.5F).looping()
             .addBoneAnimation("right", new Transformation(Transformation.Targets.ROTATE,
                     new Keyframe(0.0F, AnimationHelper.createRotationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.LINEAR),
                     new Keyframe(0.5F, AnimationHelper.createRotationalVector(12.5F, 0.0F, 0.0F), Transformation.Interpolations.LINEAR),
@@ -55,7 +52,7 @@ public class EnchanterAnimations {
             ))
             .build();
 
-    public static final Animation attack = Animation.Builder.create(2.0F).looping()
+    public static final AnimationDefinition attack = AnimationDefinition.Builder.create(2.0F).looping()
             .addBoneAnimation("right2", new Transformation(Transformation.Targets.ROTATE,
                     new Keyframe(0.0F, AnimationHelper.createRotationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.LINEAR),
                     new Keyframe(0.25F, AnimationHelper.createRotationalVector(-35.0F, 0.0F, 0.0F), Transformation.Interpolations.LINEAR),

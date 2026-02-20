@@ -15,7 +15,7 @@ import net.minecraft.world.World;
 public class DancerSwordItem extends Item {
 
     public DancerSwordItem(ToolMaterial material, float attackDamage, float attackSpeed, Settings settings) {
-        super(settings.tool(material, BlockTags.SWORD_EFFICIENT,attackDamage,attackSpeed,1f));
+        super(settings.sword(material,attackDamage,attackSpeed));
     }
 
 

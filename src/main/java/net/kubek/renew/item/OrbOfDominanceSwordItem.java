@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 public class OrbOfDominanceSwordItem extends Item {
 
     public OrbOfDominanceSwordItem(ToolMaterial material, float attackDamage, float attackSpeed, Item.Settings settings) {
-        super(settings.tool(material, BlockTags.SWORD_EFFICIENT,attackDamage,attackSpeed,1f));
+        super(settings.sword(material, attackDamage,attackSpeed));
     }
 
 

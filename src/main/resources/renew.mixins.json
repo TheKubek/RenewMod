@@ -3,7 +3,7 @@
 	"package": "net.kubek.renew.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-
+        "HappyGhastAttribiuteMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

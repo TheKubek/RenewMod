@@ -4,6 +4,7 @@ import net.kubek.renew.entity.client.animation.CorruptedEnchanterAnimation;
 import net.kubek.renew.entity.custom.CorruptedEnchanterEntity;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
+import net.minecraft.client.render.entity.animation.Animation;
 import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.util.math.MathHelper;
 
@@ -18,6 +19,11 @@ public class CorruptedEnchanterModel extends EntityModel<CorruptedEnchanterRende
     private final ModelPart left2;
     private final ModelPart head;
     private final ModelPart orb;
+
+    private final Animation walkingAnimation;
+    private final Animation idleAnimation;
+    private final Animation attackAnimation;
+
     public CorruptedEnchanterModel(ModelPart root) {
         super(root);
         this.enchanter = root.getChild("enchanter");
@@ -30,6 +36,10 @@ public class CorruptedEnchanterModel extends EntityModel<CorruptedEnchanterRende
         this.left2 = this.hands.getChild("left2");
         this.head = this.enchanter.getChild("head");
         this.orb = this.enchanter.getChild("orb");
+
+        this.walkingAnimation = CorruptedEnchanterAnimation.walk.createAnimation(root);
+        this.idleAnimation = CorruptedEnchanterAnimation.idle.createAnimation(root);
+        this.attackAnimation = CorruptedEnchanterAnimation.attack.createAnimation(root);
     }
     public static TexturedModelData getTexturedModelData() {
         ModelData modelData = new ModelData();
@@ -71,9 +81,9 @@ public class CorruptedEnchanterModel extends EntityModel<CorruptedEnchanterRende
         this.getPart().traverse().forEach(ModelPart::resetTransform);
         this.setHeadAngle(state.relativeHeadYaw,state.pitch);
 
-        this.animateWalking(CorruptedEnchanterAnimation.walk,state.limbSwingAnimationProgress,state.limbSwingAmplitude,4f,2.5f);
-        this.animate(state.idleAnimationState,CorruptedEnchanterAnimation.idle,state.age,1f);
-        this.animate(state.attackAnimationState,CorruptedEnchanterAnimation.attack,state.age,1f);
+        this.walkingAnimation.applyWalking(state.limbSwingAnimationProgress,state.limbSwingAmplitude,4f,2.5f);
+        this.idleAnimation.apply(state.idleAnimationState,state.age,1f);
+        this.attackAnimation.apply(state.attackAnimationState,state.age,1f);
 
     }
     private void setHeadAngle(float headYaw, float headPitch){

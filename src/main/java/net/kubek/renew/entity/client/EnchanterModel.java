@@ -1,7 +1,9 @@
 package net.kubek.renew.entity.client;
 
+import net.kubek.renew.entity.client.animation.CorruptedEnchanterAnimation;
 import net.kubek.renew.entity.client.animation.EnchanterAnimations;
 import net.minecraft.client.model.*;
+import net.minecraft.client.render.entity.animation.Animation;
 import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.util.math.MathHelper;
 
@@ -17,6 +19,12 @@ public class EnchanterModel extends EntityModel<EnchanterRenderState> {
     private final ModelPart orb;
     private final ModelPart left2;
     private final ModelPart head;
+
+
+    private final Animation walkingAnimation;
+    private final Animation idleAnimation;
+    private final Animation attackAnimation;
+
     public EnchanterModel(ModelPart root) {
         super(root);
         this.enchanter = root.getChild("enchanter");
@@ -30,6 +38,11 @@ public class EnchanterModel extends EntityModel<EnchanterRenderState> {
         this.orb = this.wand.getChild("orb");
         this.left2 = this.hands.getChild("left2");
         this.head = this.enchanter.getChild("head");
+
+
+        this.walkingAnimation = EnchanterAnimations.walk.createAnimation(root);
+        this.idleAnimation = EnchanterAnimations.idle.createAnimation(root);
+        this.attackAnimation = EnchanterAnimations.attack.createAnimation(root);
     }
     public static TexturedModelData getTexturedModelData() {
         ModelData modelData = new ModelData();
@@ -89,9 +102,9 @@ public class EnchanterModel extends EntityModel<EnchanterRenderState> {
         this.getPart().traverse().forEach(ModelPart::resetTransform);
         this.setHeadAngle(state.relativeHeadYaw,state.pitch);
 
-        this.animateWalking(EnchanterAnimations.walk,state.limbSwingAnimationProgress,state.limbSwingAmplitude,4f,2.5f);
-        this.animate(state.idleAnimationState,EnchanterAnimations.idle, state.age,1f);
-        this.animate(state.attackAnimationState,EnchanterAnimations.attack,state.age,1f);
+        this.walkingAnimation.applyWalking(state.limbSwingAnimationProgress,state.limbSwingAmplitude,4f,2.5f);
+        this.idleAnimation.apply(state.idleAnimationState,state.age,1f);
+        this.attackAnimation.apply(state.attackAnimationState,state.age,1f);
 
     }
     private void setHeadAngle(float headYaw, float headPitch){

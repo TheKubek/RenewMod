@@ -15,9 +15,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
-        getOrCreateTagBuilder(ModTags.Blocks.INCORRECT_FOR_ORB_OF_DOMINANCE_TOOL)
+        valueLookupBuilder(ModTags.Blocks.INCORRECT_FOR_ORB_OF_DOMINANCE_TOOL)
                 .forceAddTag(BlockTags.INCORRECT_FOR_NETHERITE_TOOL);
-        getOrCreateTagBuilder(ModTags.Blocks.NEEDS_ORB_OF_DOMINANCE_TOOl)
+        valueLookupBuilder(ModTags.Blocks.NEEDS_ORB_OF_DOMINANCE_TOOl)
                 .forceAddTag(BlockTags.NEEDS_DIAMOND_TOOL);
     }
 }
